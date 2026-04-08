@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { regions } from '../../data/regions.js';
+---
+<Base
+  title="Commercial Lighting by Region | Energy Code & Utility Rebate Guide | Echelon Lighting"
+  description="Regional commercial lighting compliance guides. State energy codes, utility rebate programs, and local requirements for electrical contractors in LA, Orange County, Chicago, Houston, Phoenix, and Seattle."
+>
+  <div class="section py-12">
+    <div class="mb-10">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Regional Coverage</div>
+      <h1 class="text-4xl font-bold tracking-tight mb-3">Commercial Lighting by Region</h1>
+      <p class="text-base text-gray-500 max-w-xl">State energy codes, utility rebate programs, and local compliance requirements vary significantly. These guides help electrical contractors navigate regional requirements and maximize rebate opportunities.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+      {regions.map(r => (
+        <a href={`/regions/${r.id}/`} class="card p-6 no-underline group">
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-1">{r.stateCode} — {r.metro}</div>
+          <h2 class="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">{r.name}</h2>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">{r.energyCode}</p>
+          <div class="text-xs text-gray-400">{r.townships.length} sub-regions · {r.keyIndustries.slice(0,2).join(', ')}</div>
+        </a>
+      ))}
+    </div>
+    <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center">
+      <h3 class="text-lg font-bold mb-2">Don't see your region?</h3>
+      <p class="text-sm text-gray-600 max-w-lg mx-auto mb-5">We're adding regions nationwide. We serve ECs in all 50 states — contact us for energy code guidance and EC pricing in your area.</p>
+      <button onclick="openRFQ('','','Regional Coverage Inquiry')" class="btn-primary">Contact Us About Your Region</button>
+    </div>
+  </div>
+</Base>

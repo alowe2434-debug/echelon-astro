@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { manufacturers } from '../../data/manufacturers.js';
+const dlcMfrs = manufacturers.filter(m => m.certifications.includes('DLC')).slice(0, 6);
+---
+<Base title="DLC Qualified Commercial Lighting | Utility Rebate Eligible Products | Echelon Lighting" description="DLC qualified commercial LED lighting for utility rebate programs. DesignLights Consortium listed products from 200+ manufacturers. EC pricing, nationwide delivery.">
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8"><a href="/" class="hover:text-gray-700 no-underline">Home</a><span>/</span><a href="/compliance/" class="hover:text-gray-700 no-underline">Compliance</a><span>/</span><span class="text-gray-700">DLC Qualified</span></nav>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">DLC Qualification</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-4">DLC Qualified Commercial LED Products</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">DesignLights Consortium (DLC) qualification is the primary certification program for commercial LED products in North America. DLC listing is required by most utility rebate programs and is increasingly referenced in energy codes as the minimum performance threshold for commercial luminaires.</p>
+        <h2 class="text-2xl font-bold tracking-tight mb-4">DLC Standard vs DLC Premium</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div class="p-5 bg-gray-50 rounded-xl border border-gray-200"><h3 class="font-bold mb-2">DLC Standard</h3><p class="text-sm text-gray-600 leading-relaxed">Meets baseline efficiency and performance requirements. Qualifies for standard-tier utility rebates. Accepted by most energy codes as compliant product.</p></div>
+          <div class="p-5 bg-blue-50 rounded-xl border border-blue-200"><h3 class="font-bold text-blue-900 mb-2">DLC Premium</h3><p class="text-sm text-gray-700 leading-relaxed">Higher efficacy threshold — typically 20-30% more efficient than DLC Standard. Qualifies for premium rebate tiers at most utilities. Required by some state programs.</p></div>
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Why DLC Listing Matters for ECs</h2>
+        <div class="flex flex-col gap-3 mb-8">
+          {['Most utility rebate programs require DLC listing — non-DLC products are ineligible', 'Rebates of $30-150+ per fixture are common for DLC Premium LED upgrades', 'Some specifiers and building owners require DLC as a minimum product standard', 'DLC listing verifies lumen output, efficacy, CRI, and lifetime claims', 'Echelon Lighting can confirm DLC status for any product we source'].map(r => <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200"><span class="text-blue-700 flex-shrink-0">▸</span><span class="text-sm text-gray-700">{r}</span></div>)}
+        </div>
+        <h2 class="text-xl font-bold tracking-tight mb-4">DLC Listed Manufacturers We Carry</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {dlcMfrs.map(m => <a href={`/manufacturers/${m.id}/`} class="p-3 border border-gray-200 rounded-lg hover:border-blue-300 no-underline group"><div class="text-sm font-bold text-gray-900 group-hover:text-blue-700">{m.name}</div><div class="text-xs text-gray-400 mt-0.5">DLC listed products</div></a>)}
+        </div>
+      </div>
+      <div><div class="sticky top-20"><div class="bg-blue-700 rounded-xl p-5 text-white mb-5"><h3 class="text-sm font-bold mb-2">DLC Products for Your Project</h3><p class="text-xs text-blue-200 leading-relaxed mb-4">We'll confirm DLC status and utility rebate eligibility for any product we source.</p><button onclick="openRFQ('','','DLC Qualified Products')" class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold cursor-pointer border-0">Get DLC Pricing</button></div></div></div>
+    </div>
+  </div>
+</Base>

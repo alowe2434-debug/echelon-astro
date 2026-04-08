@@ -1,0 +1,240 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: object;
+  noindex?: boolean;
+}
+
+const { title, description, canonical, schema, noindex = false } = Astro.props;
+const canonicalUrl = canonical || Astro.url.href;
+const siteName = 'Echelon Lighting';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:type" content="website" />
+
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Echelon Lighting",
+    "url": "https://echelonlighting.com",
+    "description": "Commercial lighting distributor serving electrical contractors nationwide. 200+ manufacturers, specification support, and competitive wholesale pricing.",
+    "contactPoint": { "@type": "ContactPoint", "contactType": "Sales", "email": "quotes@echelonlighting.com" },
+    "areaServed": "US",
+    "serviceType": "Commercial Lighting Distribution"
+  })}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="font-sans text-gray-900 bg-white" style="font-family: 'Inter Tight', system-ui, sans-serif;">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 h-[60px] flex items-center px-6 lg:px-10 justify-between">
+    <a href="/" class="flex items-center gap-2 font-bold text-sm tracking-tight text-gray-900 no-underline">
+      <span class="w-2 h-2 rounded-full bg-blue-700 inline-block"></span>
+      Echelon Lighting
+    </a>
+    <div class="hidden md:flex items-center gap-7">
+      <a href="/manufacturers/" class="text-sm font-medium text-gray-600 hover:text-gray-900 no-underline">Manufacturers</a>
+      <a href="/products/" class="text-sm font-medium text-gray-600 hover:text-gray-900 no-underline">By Category</a>
+      <a href="/applications/" class="text-sm font-medium text-gray-600 hover:text-gray-900 no-underline">By Application</a>
+      <a href="/compliance/" class="text-sm font-medium text-gray-600 hover:text-gray-900 no-underline">Compliance</a>
+      <a href="/regions/" class="text-sm font-medium text-gray-600 hover:text-gray-900 no-underline">By Region</a>
+      <a href="/resources/" class="text-sm font-medium text-gray-600 hover:text-gray-900 no-underline">Resources</a>
+      <button onclick="openRFQ('','','General Inquiry')" class="bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-800 transition-colors cursor-pointer border-0">Request a Quote</button>
+    </div>
+    <button class="md:hidden text-gray-600 bg-transparent border-0" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="hidden fixed top-[60px] left-0 right-0 z-40 bg-white border-b border-gray-100 shadow-lg">
+    <div class="flex flex-col p-4 gap-3">
+      <a href="/manufacturers/" class="text-sm font-medium text-gray-700 py-1.5 no-underline">Manufacturers</a>
+      <a href="/products/" class="text-sm font-medium text-gray-700 py-1.5 no-underline">By Category</a>
+      <a href="/applications/" class="text-sm font-medium text-gray-700 py-1.5 no-underline">By Application</a>
+      <a href="/compliance/" class="text-sm font-medium text-gray-700 py-1.5 no-underline">Compliance</a>
+      <a href="/regions/" class="text-sm font-medium text-gray-700 py-1.5 no-underline">By Region</a>
+      <a href="/resources/" class="text-sm font-medium text-gray-700 py-1.5 no-underline">Resources</a>
+      <button onclick="openRFQ('','','General Inquiry')" class="bg-blue-700 text-white py-2.5 rounded-full text-sm font-semibold">Request a Quote</button>
+    </div>
+  </div>
+
+  <main class="pt-[60px]"><slot /></main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 py-12 mt-20">
+    <div class="section">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 font-bold text-sm mb-3">
+            <span class="w-2 h-2 rounded-full bg-blue-700 inline-block"></span>
+            Echelon Lighting
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">Commercial lighting distribution for electrical contractors. 200+ manufacturers. Nationwide drop ship.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Manufacturers</h4>
+          <ul class="space-y-1.5">
+            <li><a href="/manufacturers/lithonia-lighting/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Lithonia Lighting</a></li>
+            <li><a href="/manufacturers/juno-lighting/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Juno Lighting</a></li>
+            <li><a href="/manufacturers/focal-point/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Focal Point</a></li>
+            <li><a href="/manufacturers/rab-lighting/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">RAB Lighting</a></li>
+            <li><a href="/manufacturers/" class="text-xs text-blue-600 hover:text-blue-800 no-underline">All manufacturers →</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Categories</h4>
+          <ul class="space-y-1.5">
+            <li><a href="/products/downlights/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Downlights</a></li>
+            <li><a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">High Bay</a></li>
+            <li><a href="/products/linear-recessed/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Linear Recessed</a></li>
+            <li><a href="/products/exterior/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Exterior Lighting</a></li>
+            <li><a href="/products/" class="text-xs text-blue-600 hover:text-blue-800 no-underline">All categories →</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Compliance</h4>
+          <ul class="space-y-1.5">
+            <li><a href="/compliance/title-24/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">California Title 24</a></li>
+            <li><a href="/compliance/dlc-qualified/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">DLC Qualified</a></li>
+            <li><a href="/compliance/ashrae-90-1/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">ASHRAE 90.1</a></li>
+            <li><a href="/compliance/buy-america/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Buy America</a></li>
+            <li><a href="/compliance/" class="text-xs text-blue-600 hover:text-blue-800 no-underline">All standards →</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Contact</h4>
+          <ul class="space-y-1.5">
+            <li><a href="mailto:quotes@echelonlighting.com" class="text-xs text-gray-600 hover:text-gray-900 no-underline">quotes@echelonlighting.com</a></li>
+            <li><a href="/regions/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">Regional Coverage</a></li>
+            <li><a href="/resources/" class="text-xs text-gray-600 hover:text-gray-900 no-underline">EC Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+        <p class="text-xs text-gray-400">&copy; 2026 Echelon Lighting. All rights reserved. Serving electrical contractors nationwide.</p>
+        <p class="text-xs text-gray-400">DLC · UL · Title 24 · ASHRAE 90.1 · Buy America · ENERGY STAR</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RFQ MODAL -->
+  <div id="rfqModal" class="hidden fixed inset-0 bg-black/50 z-[200] items-center justify-center p-5" style="display:none" onclick="if(event.target===this)closeRFQ()">
+    <div class="bg-white rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-8" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-start mb-5">
+        <h3 class="text-xl font-bold tracking-tight">Request a Quote</h3>
+        <button onclick="closeRFQ()" class="text-gray-400 hover:text-gray-700 text-2xl leading-none bg-transparent border-0 cursor-pointer">&times;</button>
+      </div>
+      <div id="rfqForm">
+        <div id="rfqProduct" class="inline-block bg-blue-50 text-blue-700 px-3 py-1.5 rounded-md text-xs font-bold mb-5">General Quote Request</div>
+        <div class="grid grid-cols-2 gap-3 mb-3">
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">First Name</label><input type="text" placeholder="John" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500" /></div>
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Last Name</label><input type="text" placeholder="Smith" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500" /></div>
+        </div>
+        <div class="mb-3"><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Company</label><input type="text" placeholder="ABC Electric Inc." class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500" /></div>
+        <div class="grid grid-cols-2 gap-3 mb-3">
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Phone</label><input type="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500" /></div>
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Email</label><input type="email" placeholder="john@abcelectric.com" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500" /></div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 mb-3">
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">City / State</label><input type="text" placeholder="Los Angeles, CA" class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500" /></div>
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Role</label>
+            <select class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500">
+              <option value="">Select...</option>
+              <option>Electrical Contractor (EC)</option>
+              <option>Lighting Designer</option>
+              <option>Electrical Engineer</option>
+              <option>Architect</option>
+              <option>Facility Manager</option>
+              <option>General Contractor</option>
+              <option>Distributor</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 mb-3">
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Project Type</label>
+            <select class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500">
+              <option value="">Select...</option>
+              <option>New Construction</option>
+              <option>Retrofit / Renovation</option>
+              <option>Tenant Improvement</option>
+              <option>Ongoing Account</option>
+              <option>Bid / Spec</option>
+            </select>
+          </div>
+          <div><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Timeline</label>
+            <select class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500">
+              <option value="">Select...</option>
+              <option>ASAP / Active Bid</option>
+              <option>Within 2 weeks</option>
+              <option>2-4 weeks</option>
+              <option>1-3 months</option>
+              <option>Planning stage</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-4"><label class="block text-xs font-bold uppercase tracking-wide text-gray-400 mb-1.5">Project Details / Spec Information</label>
+          <textarea placeholder="Manufacturer, model numbers, quantities, project location, spec sheets, or any other details..." class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-blue-500 resize-y min-h-[90px]"></textarea>
+        </div>
+        <button onclick="submitRFQ()" class="w-full bg-blue-700 text-white py-3.5 rounded-lg text-sm font-bold hover:bg-blue-800 transition-colors cursor-pointer border-0">Submit Quote Request</button>
+      </div>
+      <div id="rfqSuccess" class="hidden text-center py-5">
+        <div class="text-5xl mb-4">✅</div>
+        <h4 class="text-xl font-bold mb-2">Quote Request Received</h4>
+        <p class="text-sm text-gray-600">We'll review your specs and get back to you within 24-48 business hours with pricing and lead times.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openRFQ(mfr, model, context) {
+      const label = model ? `${mfr} ${model}` : (context || 'General Quote Request');
+      document.getElementById('rfqProduct').textContent = label;
+      document.getElementById('rfqForm').style.display = 'block';
+      document.getElementById('rfqSuccess').classList.add('hidden');
+      const m = document.getElementById('rfqModal');
+      m.classList.remove('hidden');
+      m.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeRFQ() {
+      const m = document.getElementById('rfqModal');
+      m.classList.add('hidden');
+      m.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    function submitRFQ() {
+      document.getElementById('rfqForm').style.display = 'none';
+      document.getElementById('rfqSuccess').classList.remove('hidden');
+    }
+    window.openRFQ = openRFQ;
+    window.closeRFQ = closeRFQ;
+    window.submitRFQ = submitRFQ;
+  </script>
+</body>
+</html>

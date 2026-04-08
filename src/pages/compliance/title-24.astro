@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import { manufacturers } from '../../data/manufacturers.js';
+const title24Mfrs = manufacturers.filter(m => m.certifications.includes('Title 24')).slice(0, 6);
+---
+<Base
+  title="California Title 24 Commercial Lighting Compliance Guide | Echelon Lighting"
+  description="Complete California Title 24 Part 6 compliance guide for commercial lighting. LPD limits, controls requirements, JA8 certification, and Title 24 qualified products for electrical contractors."
+>
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a><span>/</span>
+      <a href="/compliance/" class="hover:text-gray-700 no-underline">Compliance</a><span>/</span>
+      <span class="text-gray-700">Title 24</span>
+    </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">California Energy Code</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-4">California Title 24 — Commercial Lighting</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">California Title 24 Part 6 is the most stringent commercial lighting energy code in the United States. Every California commercial construction project — new build or major renovation — must comply with Title 24 requirements for lighting power density, controls, and photometrics.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Lighting Power Density (LPD) Limits</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Title 24 sets maximum watts per square foot for each space type. ECs must verify that the specified fixture schedule meets the LPD allowance for each room or zone.</p>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-sm border-collapse">
+            <thead><tr class="bg-gray-900 text-white"><th class="text-left p-3 font-bold">Space Type</th><th class="text-left p-3 font-bold">LPD (W/ft²)</th><th class="text-left p-3 font-bold">Notes</th></tr></thead>
+            <tbody>
+              {[
+                ['Office — Open Plan', '0.79', 'Controls required; daylight dimming in perimeter zones'],
+                ['Office — Private', '0.74', 'Occupancy sensor required'],
+                ['Conference Room', '1.23', 'Multi-level switching or dimming required'],
+                ['Retail — General', '1.44', 'Accent lighting allowance available'],
+                ['Warehouse', '0.66', 'Motion sensors required in most warehouse zones'],
+                ['Lobby / Reception', '0.90', 'Decorative allowance may apply'],
+                ['Healthcare — Patient Room', '0.68', 'Night lighting provisions required'],
+                ['Parking Structure', '0.21', 'Motion sensors required in all areas'],
+              ].map(([space, lpd, note], i) => (
+                <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td class="p-3 border border-gray-200 font-medium">{space}</td>
+                  <td class="p-3 border border-gray-200 font-mono font-bold text-blue-700">{lpd}</td>
+                  <td class="p-3 border border-gray-200 text-xs text-gray-600">{note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Mandatory Controls Requirements</h2>
+        <div class="flex flex-col gap-3 mb-8">
+          {[
+            'Automatic shutoff required in virtually all commercial spaces — occupancy sensor or scheduling',
+            'Multi-level lighting control required — dimming or switched steps at 50% and 100%',
+            'Daylighting controls required in primary sidelit and toplit daylight zones',
+            'Demand responsive lighting control required in buildings over 10,000 sq ft',
+            'Outdoor lighting must have automatic shutoff controls and comply with backlight/uplight/glare limits',
+          ].map(req => (
+            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <span class="text-blue-700 font-bold flex-shrink-0">▸</span>
+              <span class="text-sm text-gray-700">{req}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-4">JA8 Product Certification</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California Joint Appendix 8 (JA8) is a product certification program that verifies luminaire performance for Title 24 compliance. JA8 certification is required for most luminaires installed in California commercial projects in climate zones 3-15.</p>
+        <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-5 mb-8">
+          <h4 class="text-sm font-bold text-yellow-800 mb-2">Important for ECs: JA8 Verification</h4>
+          <p class="text-sm text-yellow-700 leading-relaxed">Always verify JA8 certification on the CEC Appliance Database before installing luminaires on Title 24 projects. Non-JA8 fixtures will fail the HERS inspection. Echelon Lighting can confirm JA8 status for any fixture we source.</p>
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Title 24 Compliant Manufacturers</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {title24Mfrs.map(m => (
+            <a href={`/manufacturers/${m.id}/`} class="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all no-underline group">
+              <div class="text-sm font-bold text-gray-900 group-hover:text-blue-700">{m.name}</div>
+              <div class="text-xs text-gray-500 mt-0.5">Title 24 / JA8 products available</div>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div>
+        <div class="sticky top-20 flex flex-col gap-5">
+          <div class="bg-blue-700 rounded-xl p-5 text-white">
+            <h3 class="text-sm font-bold mb-2">Title 24 Product Sourcing</h3>
+            <p class="text-xs text-blue-200 leading-relaxed mb-4">Need Title 24 or JA8 compliant fixtures? Send your California project specs and we'll confirm compliance and provide EC pricing.</p>
+            <button onclick="openRFQ('','','Title 24 Compliance — California Project')" class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-50 cursor-pointer border-0">Get Title 24 Products</button>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold mb-3">Other Standards</h3>
+            <div class="flex flex-col gap-1.5">
+              {[['DLC Qualified', '/compliance/dlc-qualified/'], ['ASHRAE 90.1', '/compliance/ashrae-90-1/'], ['Buy America', '/compliance/buy-america/'], ['ENERGY STAR', '/compliance/energy-star/']].map(([name, href]) => (
+                <a href={href} class="text-xs font-medium text-gray-600 hover:text-blue-700 no-underline py-1.5 border-b border-gray-100 last:border-0">{name} →</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

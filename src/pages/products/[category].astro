@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import { categories, manufacturers } from '../../data/manufacturers.js';
+
+export async function getStaticPaths() {
+  return categories.map(cat => ({
+    params: { category: cat.id },
+    props: { category: cat },
+  }));
+}
+
+const { category } = Astro.props;
+const catMfrs = manufacturers.filter(m => m.categories.includes(category.id));
+const tier1Mfrs = catMfrs.filter(m => m.tier === 1);
+const otherMfrs = catMfrs.filter(m => m.tier !== 1);
+---
+
+<Base
+  title={`Commercial ${category.name} | Spec-Grade LED for Electrical Contractors | Echelon Lighting`}
+  description={`Commercial ${category.name.toLowerCase()} from ${catMfrs.length} specification-grade manufacturers. ${category.description}. EC pricing, DLC compliant options, nationwide delivery.`}
+>
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a>
+      <span>/</span>
+      <a href="/products/" class="hover:text-gray-700 no-underline">Products</a>
+      <span>/</span>
+      <span class="text-gray-700">{category.name}</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Commercial Lighting</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-3">Commercial {category.name}</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">{category.description}. Echelon Lighting carries {category.name.toLowerCase()} from {catMfrs.length} specification-grade manufacturers at EC pricing.</p>
+
+        {tier1Mfrs.length > 0 && (
+          <div class="mb-8">
+            <h2 class="text-xl font-bold tracking-tight mb-4">Most Specified Manufacturers</h2>
+            <div class="flex flex-col gap-3">
+              {tier1Mfrs.map(m => (
+                <div class="flex items-start justify-between p-4 bg-gray-50 border border-gray-200 rounded-xl">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <a href={`/manufacturers/${m.id}/`} class="text-base font-bold text-gray-900 hover:text-blue-700 no-underline">{m.name}</a>
+                      <span class="text-xs bg-blue-700 text-white px-2 py-0.5 rounded-full font-bold">Tier 1</span>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">{m.specialty}</p>
+                    <div class="flex flex-wrap gap-1 mt-2">
+                      {m.certifications.map(c => <span class="text-xs font-mono bg-white border border-gray-200 text-gray-600 px-1.5 py-0.5 rounded">{c}</span>)}
+                    </div>
+                  </div>
+                  <button onclick={`openRFQ('${m.name}','','${category.name} Quote')`} class="ml-4 text-xs font-bold text-blue-700 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg transition-colors cursor-pointer border-0 whitespace-nowrap">Get Pricing</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {otherMfrs.length > 0 && (
+          <div class="mb-8">
+            <h2 class="text-xl font-bold tracking-tight mb-4">Additional Manufacturers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {otherMfrs.map(m => (
+                <div class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg">
+                  <div>
+                    <a href={`/manufacturers/${m.id}/`} class="text-sm font-bold text-gray-900 hover:text-blue-700 no-underline">{m.name}</a>
+                    <p class="text-xs text-gray-500 mt-0.5">{m.specialty.split(' — ')[0]}</p>
+                  </div>
+                  <button onclick={`openRFQ('${m.name}','','${category.name}')`} class="text-xs text-blue-700 font-bold hover:text-blue-900 cursor-pointer border-0 bg-transparent">Quote →</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-6">
+          <h3 class="text-base font-bold mb-2">Have a {category.name} Spec?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">Send us your lighting schedule or fixture cut sheets. We'll confirm availability and provide EC pricing within 24-48 hours — any manufacturer, any quantity.</p>
+          <button onclick={`openRFQ('','','${category.name} Specification')`} class="btn-primary text-sm">Send Spec Sheet</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="sticky top-20 flex flex-col gap-5">
+          <div class="bg-blue-700 rounded-xl p-5 text-white">
+            <h3 class="text-sm font-bold mb-2">Get {category.name} Pricing</h3>
+            <p class="text-xs text-blue-200 leading-relaxed mb-4">EC pricing on all {catMfrs.length} manufacturers in this category. Send your spec and we'll quote within 24-48 hours.</p>
+            <button onclick={`openRFQ('','','${category.name} Quote Request')`} class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-50 cursor-pointer border-0">Request EC Pricing</button>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold mb-3">Other Categories</h3>
+            <div class="flex flex-col gap-1">
+              {(await import('../../data/manufacturers.js')).categories.filter(c => c.id !== category.id).slice(0, 8).map(c => (
+                <a href={`/products/${c.id}/`} class="text-xs font-medium text-gray-600 hover:text-blue-700 py-1.5 border-b border-gray-100 last:border-0 no-underline">{c.name} →</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

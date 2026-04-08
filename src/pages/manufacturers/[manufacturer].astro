@@ -1,0 +1,175 @@
+---
+import Base from '../../layouts/Base.astro';
+import { manufacturers, categories } from '../../data/manufacturers.js';
+
+export async function getStaticPaths() {
+  return manufacturers.map(m => ({
+    params: { manufacturer: m.id },
+    props: { manufacturer: m },
+  }));
+}
+
+const { manufacturer: m } = Astro.props;
+
+const relatedMfrs = manufacturers
+  .filter(other => other.id !== m.id && other.categories.some(c => m.categories.includes(c)))
+  .slice(0, 4);
+
+const mfrCategories = categories.filter(c => m.categories.includes(c.id));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "brand": { "@type": "Brand", "name": m.name },
+  "description": m.specialty,
+  "offers": {
+    "@type": "Offer",
+    "seller": { "@type": "Organization", "name": "Echelon Lighting" },
+    "availability": "https://schema.org/InStock"
+  }
+};
+---
+
+<Base
+  title={`${m.name} Commercial Lighting | Authorized Distributor | Echelon Lighting`}
+  description={`Authorized distributor for ${m.name} commercial lighting products. ${m.specialty}. ${m.certifications.join(', ')} certified. EC pricing and nationwide delivery.`}
+  schema={schema}
+>
+  <div class="section py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a>
+      <span>/</span>
+      <a href="/manufacturers/" class="hover:text-gray-700 no-underline">Manufacturers</a>
+      <span>/</span>
+      <span class="text-gray-700">{m.name}</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-2">
+          {m.tier === 1 && <span class="text-xs font-bold bg-blue-700 text-white px-2.5 py-1 rounded-full uppercase tracking-wide">Tier 1 Specified</span>}
+          {m.tier === 2 && <span class="text-xs font-bold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full uppercase tracking-wide">Highly Specified</span>}
+          {m.parent !== 'Independent' && <span class="text-xs text-gray-400">{m.parent}</span>}
+        </div>
+        <h1 class="text-4xl font-bold tracking-tight mb-3">{m.name}</h1>
+        <p class="text-xl text-gray-500 leading-relaxed mb-8">{m.specialty}</p>
+
+        <!-- Certifications -->
+        <div class="flex flex-wrap gap-2 mb-8">
+          {m.certifications.map(c => (
+            <span class="text-sm font-bold font-mono bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg">{c}</span>
+          ))}
+        </div>
+
+        <!-- Product Categories -->
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Product Lines Available</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-5">
+          Echelon Lighting carries {m.name} products across the following fixture categories. All products are specification-grade and available for EC pricing. Contact us with your project spec sheet for availability and lead times.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+          {mfrCategories.map(cat => (
+            <a href={`/products/${cat.id}/`} class="flex items-start gap-3 p-4 bg-gray-50 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all no-underline group">
+              <div class="w-1.5 h-1.5 rounded-full bg-blue-700 flex-shrink-0 mt-1.5"></div>
+              <div>
+                <h3 class="text-sm font-bold text-gray-900 group-hover:text-blue-700 transition-colors">{cat.name}</h3>
+                <p class="text-xs text-gray-500 mt-0.5">{cat.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Applications -->
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Common Applications</h2>
+        <div class="flex flex-wrap gap-2 mb-8">
+          {m.applications.map(app => (
+            <span class="text-sm bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full capitalize">{app.replace(/-/g,' ')}</span>
+          ))}
+        </div>
+
+        <!-- Why Specify -->
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 mb-8">
+          <h2 class="text-lg font-bold mb-3">Why {m.name} Appears on Commercial Drawings</h2>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            {m.name} {m.tier === 1 ? 'is one of the most frequently specified lighting manufacturers in the commercial construction industry' : 'is a widely specified manufacturer in the commercial lighting specification community'}. Architects and lighting designers specify {m.name} products because of their consistent performance, broad product availability, and reliable lead times.
+          </p>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            When {m.name} appears on your project's lighting schedule, Echelon Lighting can provide EC pricing on the specified products, confirm availability and lead times, and arrange direct delivery to your job site anywhere in the United States.
+          </p>
+        </div>
+
+        <!-- Certifications Detail -->
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Compliance & Certifications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {m.certifications.map(cert => {
+            const certDetails = {
+              'DLC': 'DesignLights Consortium qualification — required for most utility rebate programs',
+              'UL': 'Underwriters Laboratories listed — meets US and Canadian safety standards',
+              'Title 24': 'California Energy Code compliant — JA8 certification where applicable',
+              'ENERGY STAR': 'EPA ENERGY STAR certified — qualifies for additional rebate programs',
+              'Made in America': 'Manufactured in the United States',
+              'Buy America': 'Compliant with Buy America Act requirements for federally funded projects',
+              'ASHRAE 90.1': 'Meets ASHRAE 90.1 energy efficiency standard — accepted in all 50 states',
+              'JA8': 'California Title 24 JA8 certified — required for Title 24 compliance in applicable climate zones',
+              'IBC': 'International Building Code compliant',
+              'IFC': 'International Fire Code compliant',
+            };
+            return (
+              <div class="flex items-start gap-3 p-3 bg-white border border-gray-200 rounded-lg">
+                <span class="font-mono font-bold text-blue-700 text-sm flex-shrink-0 mt-0.5">{cert}</span>
+                <span class="text-xs text-gray-600 leading-relaxed">{certDetails[cert] || cert + ' compliant'}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div>
+        <div class="sticky top-20 flex flex-col gap-5">
+          <div class="bg-blue-700 rounded-xl p-5 text-white">
+            <h3 class="text-sm font-bold mb-2">{m.name} Pricing for ECs</h3>
+            <p class="text-xs text-blue-200 leading-relaxed mb-4">Send us your {m.name} lighting schedule or spec sheet. We'll respond within 24-48 hours with EC pricing and lead times.</p>
+            <button onclick={`openRFQ('${m.name}','','${m.name} Quote Request')`} class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-50 transition-colors cursor-pointer border-0">Request EC Pricing</button>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold mb-3">Quick Facts</h3>
+            <div class="flex flex-col gap-2">
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <span class="text-xs text-gray-500">Parent Company</span>
+                <span class="text-xs font-medium text-gray-900">{m.parent}</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <span class="text-xs text-gray-500">Specification Tier</span>
+                <span class="text-xs font-medium text-gray-900">Tier {m.tier}</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <span class="text-xs text-gray-500">Certifications</span>
+                <span class="text-xs font-medium text-gray-900">{m.certifications.join(', ')}</span>
+              </div>
+              <div class="flex justify-between py-2">
+                <span class="text-xs text-gray-500">Categories</span>
+                <span class="text-xs font-medium text-gray-900">{m.categories.length} product lines</span>
+              </div>
+            </div>
+          </div>
+
+          {relatedMfrs.length > 0 && (
+            <div class="bg-white border border-gray-200 rounded-xl p-5">
+              <h3 class="text-sm font-bold mb-3">Similar Manufacturers</h3>
+              <div class="flex flex-col gap-2">
+                {relatedMfrs.map(r => (
+                  <a href={`/manufacturers/${r.id}/`} class="flex items-center gap-2 py-2 border-b border-gray-100 last:border-0 no-underline group">
+                    <div class="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></div>
+                    <span class="text-xs font-medium text-gray-700 group-hover:text-blue-700">{r.name} →</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

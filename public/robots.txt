@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://echelonlighting.com/sitemap-index.xml

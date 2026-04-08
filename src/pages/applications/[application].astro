@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+import { applications, manufacturers } from '../../data/manufacturers.js';
+
+export async function getStaticPaths() {
+  return applications.map(app => ({
+    params: { application: app.id },
+    props: { application: app },
+  }));
+}
+
+const { application: app } = Astro.props;
+
+const appMfrs = manufacturers.filter(m =>
+  m.applications.some(a => app.id.includes(a) || a.includes(app.id.split('-')[0]))
+).slice(0, 8);
+---
+
+<Base
+  title={`Commercial Lighting for ${app.name} | Specification Guide | Echelon Lighting`}
+  description={`Commercial lighting specification guide for ${app.name.toLowerCase()} applications. ${app.description}. Manufacturer recommendations, energy code requirements, and EC pricing.`}
+>
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a>
+      <span>/</span>
+      <a href="/applications/" class="hover:text-gray-700 no-underline">Applications</a>
+      <span>/</span>
+      <span class="text-gray-700">{app.name}</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Application Guide</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-3">Commercial Lighting for {app.name}</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">{app.description}. This guide covers specification requirements, energy code compliance, and recommended manufacturers for electrical contractors working on {app.name.toLowerCase()} projects.</p>
+
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-8">
+          <h3 class="text-sm font-bold text-blue-900 mb-2">Specification Notes</h3>
+          <p class="text-sm text-blue-800 leading-relaxed">{app.specs}</p>
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Recommended Manufacturers</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-5">The following manufacturers are commonly specified on {app.name.toLowerCase()} projects and stocked by Echelon Lighting for EC pricing and direct delivery.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+          {appMfrs.map(m => (
+            <a href={`/manufacturers/${m.id}/`} class="flex items-start gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all no-underline group">
+              <div class="flex-1">
+                <div class="text-sm font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-1">{m.name}</div>
+                <p class="text-xs text-gray-500 leading-snug">{m.specialty.split(' — ')[1] || m.specialty}</p>
+                <div class="flex gap-1 mt-2">
+                  {m.certifications.slice(0,2).map(c => <span class="text-xs font-mono text-gray-500">{c}</span>)}
+                </div>
+              </div>
+              <span class="text-xs text-blue-700 font-bold group-hover:text-blue-900 whitespace-nowrap">View →</span>
+            </a>
+          ))}
+        </div>
+
+        <div class="bg-gray-900 rounded-xl p-6">
+          <h3 class="text-base font-bold text-white mb-2">Have a {app.name} Project?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">Send us your lighting schedule or architect's specs. We'll provide EC pricing on all specified manufacturers and confirm energy code compliance — typically within 24-48 hours.</p>
+          <button onclick={`openRFQ('','','${app.name} Project Quote')`} class="bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-800 transition-colors cursor-pointer border-0">Submit Project Specs</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="sticky top-20 flex flex-col gap-5">
+          <div class="bg-blue-700 rounded-xl p-5 text-white">
+            <h3 class="text-sm font-bold mb-2">{app.name} EC Pricing</h3>
+            <p class="text-xs text-blue-200 leading-relaxed mb-4">Send us your {app.name.toLowerCase()} lighting schedule for fast EC pricing and lead times.</p>
+            <button onclick={`openRFQ('','','${app.name} Quote Request')`} class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-50 cursor-pointer border-0">Get Project Pricing</button>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold mb-3">Other Applications</h3>
+            <div class="flex flex-col gap-1">
+              {(await import('../../data/manufacturers.js')).applications.filter(a => a.id !== app.id).map(a => (
+                <a href={`/applications/${a.id}/`} class="text-xs font-medium text-gray-600 hover:text-blue-700 py-1.5 border-b border-gray-100 last:border-0 no-underline">{a.name} →</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

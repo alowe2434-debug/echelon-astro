@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const standards = [
+  { id: 'title-24', code: 'Title 24', title: 'California Energy Code — Title 24 Part 6', summary: 'The most stringent commercial lighting energy code in the US. Required for all new construction and major renovations in California. Covers lighting power density, controls, and photometric requirements.', keyReqs: ['Lighting power density (LPD) limits by space type', 'Occupancy sensors required in most commercial spaces', 'Daylighting controls required in daylight zones', 'JA8 product certification required for most luminaires'] },
+  { id: 'dlc-qualified', code: 'DLC', title: 'DesignLights Consortium (DLC) Qualification', summary: 'The primary qualification program for commercial LED products. DLC listing is required by most utility rebate programs and increasingly required by energy codes for specific product types.', keyReqs: ['Required for most utility rebate programs nationwide', 'DLC Premium designation for highest efficiency tier', 'Luminaire efficacy, CRI, and distribution requirements', 'Listed products available at deslignlights.org/qpl'] },
+  { id: 'ashrae-90-1', code: 'ASHRAE 90.1', title: 'ASHRAE 90.1 — Energy Standard for Buildings', summary: 'The reference commercial energy standard adopted by most US states. Sets lighting power density limits, control requirements, and exterior lighting zone restrictions for commercial buildings.', keyReqs: ['LPD limits by building area method or space-by-space method', 'Automatic shutoff controls required in most spaces', 'Exterior lighting power limits by zone', 'Daylighting controls required in large daylit spaces'] },
+  { id: 'buy-america', code: 'Buy America', title: 'Buy America / Buy American Requirements', summary: 'Federal procurement requirements mandating domestically manufactured products for federally funded projects. Applies to transportation, infrastructure, and many government building projects.', keyReqs: ['Required for projects receiving federal funding (transportation, infrastructure)', 'Products must be manufactured in the US with domestic components', 'Several manufacturers carry Buy America compliant product lines', 'Documentation requirements vary by funding source and agency'] },
+  { id: 'energy-star', code: 'ENERGY STAR', title: 'ENERGY STAR Commercial Lighting', summary: 'EPA program recognizing the most energy-efficient commercial lighting products. ENERGY STAR qualification unlocks additional utility rebates and may be required by green building programs.', keyReqs: ['Stricter efficiency requirements than DLC baseline', 'Available for luminaires, LED lamps, and controls', 'Qualifies for additional rebate tiers at many utilities', 'Recognized by LEED, WELL, and Green Globes programs'] },
+];
+---
+
+<Base
+  title="Commercial Lighting Compliance | Title 24, DLC, ASHRAE 90.1, Buy America | Echelon Lighting"
+  description="Commercial lighting compliance guides for electrical contractors. California Title 24, DLC qualification, ASHRAE 90.1, Buy America, and ENERGY STAR requirements explained with product sourcing guidance."
+>
+  <div class="section py-12">
+    <div class="mb-10">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Compliance Hub</div>
+      <h1 class="text-4xl font-bold tracking-tight mb-3">Commercial Lighting Compliance</h1>
+      <p class="text-base text-gray-500 max-w-xl">Energy codes, certification programs, and procurement requirements that affect commercial lighting specifications. Plain-language guides for electrical contractors.</p>
+    </div>
+    <div class="flex flex-col gap-5">
+      {standards.map(s => (
+        <a href={`/compliance/${s.id}/`} class="card p-6 lg:p-8 no-underline group">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+            <div class="lg:w-24 flex-shrink-0">
+              <span class="text-2xl font-bold text-blue-700 font-mono">{s.code}</span>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">{s.title}</h2>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">{s.summary}</p>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+                {s.keyReqs.map(req => (
+                  <li class="flex items-start gap-2 text-xs text-gray-600">
+                    <span class="text-blue-700 mt-0.5 flex-shrink-0">▸</span>{req}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <span class="text-sm font-medium text-blue-700 group-hover:text-blue-900 whitespace-nowrap">Read guide →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

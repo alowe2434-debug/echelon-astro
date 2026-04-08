@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import { manufacturers, categories, applications } from '../data/manufacturers.js';
+
+const tier1 = manufacturers.filter(m => m.tier === 1);
+const tier2 = manufacturers.filter(m => m.tier === 2).slice(0, 8);
+---
+
+<Base
+  title="Commercial Lighting Distribution for Electrical Contractors | Echelon Lighting"
+  description="Commercial lighting distributor serving electrical contractors nationwide. 200+ manufacturers including Lithonia, Juno, Focal Point, RAB, and Cree. Specification support, competitive pricing, and nationwide drop ship."
+>
+  <!-- HERO -->
+  <section class="pt-16 pb-12 px-6 lg:px-10 max-w-7xl mx-auto">
+    <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-4">Commercial Lighting Distribution</div>
+    <h1 class="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.06] text-gray-900 max-w-4xl mb-5">
+      The Lighting Supply Source for <span class="text-blue-700">Electrical Contractors</span>
+    </h1>
+    <p class="text-lg text-gray-500 max-w-xl leading-relaxed mb-8">
+      200+ commercial lighting manufacturers. Specification support. Nationwide drop ship. Whatever's on the plans, we can source it.
+    </p>
+    <div class="flex gap-3 flex-wrap">
+      <button onclick="openRFQ('','','General Quote Request')" class="btn-primary">Request Pricing</button>
+      <a href="/manufacturers/" class="btn-secondary">Browse Manufacturers</a>
+    </div>
+    <div class="flex gap-10 mt-14 pt-10 border-t border-gray-100 flex-wrap">
+      <div><div class="text-3xl font-bold tracking-tight">200+</div><div class="text-xs text-gray-400 font-medium mt-1">Manufacturers</div></div>
+      <div><div class="text-3xl font-bold tracking-tight">50+</div><div class="text-xs text-gray-400 font-medium mt-1">Product Categories</div></div>
+      <div><div class="text-3xl font-bold tracking-tight">50</div><div class="text-xs text-gray-400 font-medium mt-1">States Served</div></div>
+      <div><div class="text-3xl font-bold tracking-tight">24hr</div><div class="text-xs text-gray-400 font-medium mt-1">Quote Turnaround</div></div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="bg-gray-50 border-y border-gray-100 py-4 px-6 lg:px-10">
+    <div class="max-w-7xl mx-auto flex items-center gap-6 flex-wrap">
+      <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Top Manufacturers</span>
+      <div class="w-px h-4 bg-gray-200 hidden sm:block"></div>
+      {['Lithonia', 'Juno', 'Focal Point', 'RAB', 'Cree', 'USAI', 'Columbia', 'Holophane', 'DMF', 'nLight', '+ 190 more'].map(b => (
+        <span class="text-sm font-medium text-gray-600">{b}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- TOP MANUFACTURERS -->
+  <section class="section py-16">
+    <div class="flex justify-between items-end mb-8">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight mb-2">Most Specified Manufacturers</h2>
+        <p class="text-sm text-gray-400">The brands ECs encounter most on commercial drawings</p>
+      </div>
+      <a href="/manufacturers/" class="text-sm font-medium text-blue-700 hover:text-blue-900 no-underline">All 200+ brands →</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      {tier1.map(m => (
+        <a href={`/manufacturers/${m.id}/`} class="card p-5 no-underline group">
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-1">Tier 1 Specified</div>
+          <h3 class="text-base font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">{m.name}</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">{m.specialty}</p>
+          <div class="flex flex-wrap gap-1">
+            {m.certifications.slice(0,3).map(c => (
+              <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded font-mono">{c}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+      {tier2.map(m => (
+        <a href={`/manufacturers/${m.id}/`} class="p-3 border border-gray-100 rounded-lg hover:border-blue-200 hover:bg-blue-50 transition-all no-underline group text-center">
+          <div class="text-xs font-bold text-gray-700 group-hover:text-blue-700 transition-colors leading-tight">{m.name}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- PRODUCT CATEGORIES -->
+  <section class="bg-gray-50 border-y border-gray-100 py-16">
+    <div class="section">
+      <div class="flex justify-between items-end mb-8">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight mb-2">By Fixture Category</h2>
+          <p class="text-sm text-gray-400">Find the right product type for your application</p>
+        </div>
+        <a href="/products/" class="text-sm font-medium text-blue-700 hover:text-blue-900 no-underline">All categories →</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {categories.map(cat => (
+          <a href={`/products/${cat.id}/`} class="card p-4 no-underline group bg-white">
+            <h3 class="text-sm font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-1">{cat.name}</h3>
+            <p class="text-xs text-gray-500 leading-snug">{cat.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section py-16">
+    <div class="flex justify-between items-end mb-8">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight mb-2">By Application</h2>
+        <p class="text-sm text-gray-400">Project-specific lighting specifications and manufacturer recommendations</p>
+      </div>
+      <a href="/applications/" class="text-sm font-medium text-blue-700 hover:text-blue-900 no-underline">All applications →</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {applications.map(app => (
+        <a href={`/applications/${app.id}/`} class="card p-6 no-underline group">
+          <h3 class="text-base font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-2">{app.name}</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">{app.description}</p>
+          <p class="text-xs text-gray-400 leading-relaxed italic">{app.specs}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- WHY ECHELON -->
+  <section class="bg-gray-900 py-16 mt-4">
+    <div class="section">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-4">Built for Electrical Contractors</div>
+          <h2 class="text-3xl font-bold text-white tracking-tight mb-4">We Speak the Language of the Plans</h2>
+          <p class="text-base text-gray-400 leading-relaxed mb-4">When you pull an architectural drawing and it specifies a Lithonia WF6 LED or a Focal Point Seem 4 recessed — you need a supplier who already knows what that means and can price it today.</p>
+          <p class="text-base text-gray-400 leading-relaxed">We don't just stock fixtures. We understand specifications, comply with energy codes, and can drop ship directly to job sites nationwide.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { title: 'Spec-Grade Products', body: 'We stock the brands that appear on architectural drawings — not commodity substitutes.' },
+            { title: 'Title 24 & DLC Support', body: 'Every product we source is vetted for energy code compliance and utility rebate eligibility.' },
+            { title: 'Nationwide Drop Ship', body: 'Ship directly to job sites anywhere in the US. No minimum order on most lines.' },
+            { title: 'Competitive EC Pricing', body: 'Contractor-tier pricing on all lines. Volume discounts on project orders.' },
+          ].map(pt => (
+            <div class="bg-white/10 rounded-xl p-4">
+              <h4 class="text-sm font-bold text-white mb-2">{pt.title}</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">{pt.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section py-16">
+    <div class="bg-blue-700 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-2">Have specs? Send them over.</h2>
+        <p class="text-sm text-blue-200">We'll quote any manufacturer, any SKU, any quantity. Typically within 24-48 hours.</p>
+      </div>
+      <button onclick="openRFQ('','','Project Quote Request')" class="bg-white text-blue-700 px-8 py-3.5 rounded-full text-sm font-bold hover:bg-blue-50 transition-colors cursor-pointer border-0 whitespace-nowrap">Request Pricing Now</button>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,93 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { regions } from '../../../data/regions.js';
+import { manufacturers } from '../../../data/manufacturers.js';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const region of regions) {
+    for (const township of region.townships) {
+      paths.push({ params: { region: region.id, township: township.id }, props: { region, township } });
+    }
+  }
+  return paths;
+}
+
+const { region, township } = Astro.props;
+const featuredMfrs = manufacturers.filter(m => m.tier <= 2).slice(0, 4);
+---
+<Base
+  title={`Commercial Lighting for Electrical Contractors in ${township.name}, ${region.stateCode} | Echelon Lighting`}
+  description={`Commercial lighting distribution for ECs in ${township.name}, ${region.stateCode}. ${region.energyCode} compliant products. EC pricing, DLC listed, utility rebate eligible. Nationwide drop ship.`}
+>
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8 flex-wrap">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a><span>/</span>
+      <a href="/regions/" class="hover:text-gray-700 no-underline">Regions</a><span>/</span>
+      <a href={`/regions/${region.id}/`} class="hover:text-gray-700 no-underline">{region.name}</a><span>/</span>
+      <span class="text-gray-700">{township.name}</span>
+    </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">{region.stateCode} — {region.name}</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-4">Commercial Lighting for {township.name} Electrical Contractors</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">Echelon Lighting supplies ECs in {township.name} with specification-grade commercial lighting at contractor pricing. All products comply with {region.energyCode} as enforced in {region.name}.</p>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-8">
+          <h2 class="text-base font-bold mb-3">Energy Code for {township.name}</h2>
+          <p class="text-sm text-gray-700 mb-2"><strong>Governing Code:</strong> {region.energyCode}</p>
+          <p class="text-sm text-gray-700 mb-2"><strong>Utility Programs:</strong> {region.utilityRebates}</p>
+          <p class="text-sm text-gray-700"><strong>County Authority:</strong> {region.name}</p>
+        </div>
+
+        <h2 class="text-xl font-bold tracking-tight mb-4">Compliance Requirements in {township.name}</h2>
+        <div class="flex flex-col gap-3 mb-8">
+          {region.keyAmendments.map(a => (
+            <div class="flex items-start gap-3 p-3 bg-white border border-gray-200 rounded-lg">
+              <span class="text-blue-700 flex-shrink-0 mt-0.5">▸</span>
+              <span class="text-sm text-gray-700">{a}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-xl font-bold tracking-tight mb-4">Top Manufacturers for {township.name} Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+          {featuredMfrs.map(m => (
+            <a href={`/manufacturers/${m.id}/`} class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 no-underline group">
+              <div>
+                <div class="text-sm font-bold text-gray-900 group-hover:text-blue-700">{m.name}</div>
+                <div class="text-xs text-gray-400 mt-0.5">{m.certifications.slice(0,3).join(' · ')}</div>
+              </div>
+              <button onclick={`event.preventDefault(); openRFQ('${m.name}','','${township.name} Project')`} class="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1.5 rounded hover:bg-blue-700 hover:text-white transition-colors cursor-pointer border-0">Quote</button>
+            </a>
+          ))}
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs text-gray-400 font-medium py-1">Other cities in {region.name}:</span>
+          {region.townships.filter(t => t.id !== township.id).map(t => (
+            <a href={`/regions/${region.id}/${t.id}/`} class="text-xs font-medium text-gray-600 hover:text-blue-700 bg-gray-100 hover:bg-blue-50 px-3 py-1.5 rounded-full no-underline">{t.name}</a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div class="sticky top-20 flex flex-col gap-5">
+          <div class="bg-blue-700 rounded-xl p-5 text-white">
+            <h3 class="text-sm font-bold mb-2">Serving {township.name} ECs</h3>
+            <p class="text-xs text-blue-200 leading-relaxed mb-4">EC pricing on all manufacturer lines. Direct delivery to {township.name} job sites. Energy code compliance confirmed on every order.</p>
+            <button onclick={`openRFQ('','','${township.name}, ${region.stateCode} — EC Quote')`} class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-50 cursor-pointer border-0">Get EC Pricing</button>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold mb-3">Browse by Category</h3>
+            <div class="flex flex-col gap-1">
+              {[['Downlights','/products/downlights/'],['Linear Recessed','/products/linear-recessed/'],['High Bay','/products/high-bay/'],['Exterior','/products/exterior/'],['Controls','/products/controls/'],['Exit & Emergency','/products/exit-emergency/']].map(([name,href]) => (
+                <a href={href} class="text-xs font-medium text-gray-600 hover:text-blue-700 py-1.5 border-b border-gray-100 last:border-0 no-underline">{name} →</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

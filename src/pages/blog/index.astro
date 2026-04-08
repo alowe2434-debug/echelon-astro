@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+const posts = [
+  { slug: 'how-to-read-commercial-lighting-schedule', title: 'How to Read a Commercial Lighting Schedule: A Guide for ECs', excerpt: 'Everything on the architectural drawings makes sense once you know the fixture type codes, mounting details, and how the lighting schedule maps to the electrical plan.', category: 'Specification', date: 'March 2026', readTime: '8 min read' },
+  { slug: 'dlc-vs-energy-star-commercial-lighting', title: 'DLC vs ENERGY STAR for Commercial LED: Which Certification Matters More?', excerpt: 'Both certifications signal quality, but they serve different purposes. For most commercial projects and utility rebate applications, DLC is the one that actually matters.', category: 'Compliance', date: 'March 2026', readTime: '6 min read' },
+  { slug: 'title-24-jab-certification-explained', title: 'California Title 24 JA8 Certification: What ECs Need to Know Before Installation', excerpt: 'Installing a non-JA8 fixture on a California commercial project will fail the HERS inspection. Here\'s how to verify JA8 certification before your crew goes to work.', category: 'California', date: 'February 2026', readTime: '7 min read' },
+];
+---
+<Base title="Commercial Lighting Blog for Electrical Contractors | Echelon Lighting" description="Commercial lighting insights for electrical contractors. Specification guides, energy code updates, manufacturer news, and utility rebate program changes.">
+  <div class="section py-12">
+    <div class="mb-10">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Blog</div>
+      <h1 class="text-4xl font-bold tracking-tight mb-3">Commercial Lighting Insights</h1>
+      <p class="text-base text-gray-500 max-w-xl">Specification guides, energy code updates, and practical knowledge for electrical contractors working on commercial lighting projects.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}/`} class="card p-6 no-underline group flex flex-col">
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">{post.category}</div>
+          <h2 class="text-base font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-3 flex-1 leading-snug">{post.title}</h2>
+          <p class="text-sm text-gray-500 leading-relaxed mb-4">{post.excerpt}</p>
+          <div class="flex justify-between text-xs text-gray-400"><span>{post.date}</span><span>{post.readTime}</span></div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>
