@@ -45,7 +45,6 @@ export const manufacturers = [
   { id: 'lsi-industries', name: 'LSI Industries', parent: 'Independent', specialty: 'Petroleum canopy, retail display, and outdoor LED', categories: ['garage-canopy', 'exterior', 'floodlights'], certifications: ['DLC', 'UL'], applications: ['fuel-station', 'retail', 'parking', 'exterior-commercial'], tier: 3 },
   { id: 'hollandia', name: 'Hollandia / LSI', parent: 'LSI Industries', specialty: 'Gas station canopy and forecourt LED', categories: ['garage-canopy'], certifications: ['DLC', 'UL'], applications: ['fuel-station', 'retail'], tier: 3 },
   { id: 'orion-energy', name: 'Orion Energy Systems', parent: 'Independent', specialty: 'Industrial LED and wireless controls — warehouse and manufacturing', categories: ['high-bay', 'controls', 'iot-integration'], certifications: ['DLC', 'UL'], applications: ['warehouse', 'manufacturing', 'industrial'], tier: 3 },
-,
 
   // === NEW MANUFACTURERS — AUTO-GENERATED ===
 { id: 'aaline', name: 'aaLine', parent: 'Independent', specialty: 'Architectural linear LED luminaires for commercial office and workplace environments', categories: ["linear-recessed", "linear-suspended"], certifications: ["DLC", "UL"], applications: ["office", "education"], tier: 3 },

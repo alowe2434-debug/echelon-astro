@@ -3,10 +3,12 @@ import Base from '../../layouts/Base.astro';
 import { manufacturers, categories } from '../../data/manufacturers.js';
 
 export async function getStaticPaths() {
-  return manufacturers.map(m => ({
-    params: { manufacturer: m.id },
-    props: { manufacturer: m },
-  }));
+  return manufacturers
+    .filter(m => m && m.id)
+    .map(m => ({
+      params: { manufacturer: m.id },
+      props: { manufacturer: m },
+    }));
 }
 
 const { manufacturer: m } = Astro.props;
