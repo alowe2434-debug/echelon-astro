@@ -1,0 +1,207 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Echelon Lighting — Arlington, TX",
+      "description": "Commercial lighting installation, LED retrofits, and electrical contracting services in Arlington, TX.",
+      "url": "https://echelonlighting.com/commercial-lighting-arlington/",
+      "areaServed": { "@type": "City", "name": "Arlington", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      "parentOrganization": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "email": "quotes@echelonlighting.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Commercial Lighting Installation",
+      "provider": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "areaServed": { "@type": "City", "name": "Arlington", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      "description": "Full-service commercial lighting installation, LED retrofits, parking lot lighting, warehouse high-bay upgrades, and electrical contracting in Arlington, TX."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What commercial lighting services does Echelon provide in Arlington, TX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office lighting upgrades, exterior and security lighting, and lighting controls installation throughout Arlington and the DFW Metroplex. All work is performed by licensed electrical contractors and permitted through the City of Arlington." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Arlington require permits for commercial lighting work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The City of Arlington Building Inspections department requires electrical permits for all commercial lighting installations and modifications. Texas has adopted the 2023 NEC, and all commercial electrical work must be performed by a licensed contractor. Echelon handles all permit applications and inspection scheduling as part of every project." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there energy rebates for commercial LED upgrades in Arlington?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Oncor Electric Delivery serves the Arlington area and offers prescriptive and custom rebates for commercial LED upgrades. Interior fixture replacements qualify for $25–$75 per fixture, and custom projects can receive $0.05–$0.12 per annual kWh saved. Echelon manages the entire rebate application process, which must be submitted before work begins." }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas near Arlington does Echelon Lighting serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon serves all of Arlington plus surrounding DFW communities including Grand Prairie, Mansfield, Kennedale, Pantego, Dalworthington Gardens, and the broader Tarrant County and Dallas County commercial districts." }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can Echelon start a commercial lighting project in Arlington?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most Arlington projects move from initial site survey to installation start within 3–5 weeks, depending on fixture lead times and permit processing. Emergency lighting repairs and simple retrofit projects can often begin within 1–2 weeks." }
+        }
+      ]
+    }
+  ]
+};
+---
+<Base
+  title="Commercial Lighting Installation in Arlington, TX | Echelon Lighting"
+  description="Commercial lighting installation and LED retrofit services in Arlington, TX. Licensed electrical contractor serving warehouses, offices, and parking lots across the DFW Metroplex."
+  schema={schema}
+>
+  <!-- Hero -->
+  <div class="bg-gray-950 text-white py-20">
+    <div class="section">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Arlington, TX · Commercial Lighting</div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">Commercial Lighting Installation in Arlington, TX</h1>
+      <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">Licensed electrical contractors specializing in commercial LED lighting installation, retrofits, and energy upgrades for warehouses, offices, retail spaces, and parking facilities throughout Arlington and the DFW Metroplex.</p>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openRFQ('','','Arlington TX — Free Lighting Audit')" class="bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Get a Free Lighting Audit in Arlington</button>
+        <a href="mailto:quotes@echelonlighting.com" class="bg-white/10 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-white/20 no-underline">quotes@echelonlighting.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section py-16">
+    <h2 class="text-3xl font-bold tracking-tight mb-10">Commercial Lighting Services in Arlington</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Warehouse & Industrial Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Arlington's Great Southwest Industrial District and the I-20 corridor house some of the largest distribution and manufacturing facilities in the DFW Metroplex. We install and retrofit LED high-bay lighting systems for warehouses from 10,000 to 500,000+ square feet. Our high-bay solutions use 150W–240W LED fixtures that replace 400W–1000W HID lamps, cutting energy consumption by 50–70% while improving light uniformity and color rendering across your entire floor area.</p>
+        <a href="/products/high-bay/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View warehouse lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Office & Professional Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">From the professional offices along Cooper Street to the commercial developments near the University of Texas at Arlington, we design and install office lighting systems that meet ASHRAE 90.1 energy standards while creating productive, comfortable work environments. Our packages include recessed LED troffers, architectural downlights, linear suspended fixtures, and tunable-white systems with DALI dimming and daylight harvesting controls.</p>
+        <a href="/applications/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View office lighting solutions →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Parking Lot & Exterior Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Arlington's climate demands exterior fixtures built for sustained high-heat operation — summer temperatures regularly exceed 100°F, and LED drivers need to be rated for 50°C+ ambient or you'll see premature failure. We install pole-mounted LED area lights, full-cutoff wall packs, bollard lighting, and security fixtures. All exterior installations comply with Arlington's dark-sky lighting ordinances.</p>
+        <a href="/products/exterior/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View exterior lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">LED Retrofit & Energy Upgrades</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Already have working fixtures but paying too much in electricity? Our LED retrofit program replaces the internals of your existing fixtures — same housing, new technology. Retrofit projects cost 30–50% less than full replacements and deliver the same energy savings. We handle the complete Oncor rebate application process, which can offset 15–30% of your project cost.</p>
+        <a href="/compliance/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View energy compliance & rebate info →</a>
+      </div>
+
+    </div>
+
+    <!-- Arlington-Specific Content -->
+    <h2 class="text-3xl font-bold tracking-tight mb-6">Why Arlington Properties Need Specialized Commercial Lighting</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">Local Building Codes and Permits</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The City of Arlington enforces the 2023 National Electrical Code (NEC) for all commercial electrical work. Every commercial lighting installation requires an electrical permit from the Arlington Building Inspections department. Permit processing typically takes 5–10 business days for standard commercial lighting projects. Our team handles the entire permit process as part of every project scope.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">For new commercial construction, Arlington requires compliance with the International Energy Conservation Code (IECC), which sets maximum lighting power density (LPD) requirements by building type. Office spaces are capped at 0.82 watts per square foot, retail at 1.06 W/sq ft, and warehouses at 0.66 W/sq ft.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Climate Considerations</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Arlington's climate creates specific demands for both interior and exterior lighting installations. Summer temperatures regularly exceed 100°F with high humidity, which accelerates degradation of improperly rated exterior fixtures. We specify LED drivers rated for 50°C+ ambient operation and housings with IP65 minimum ratings for all exterior applications.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Arlington also sits in a severe weather corridor — hail, high winds, and thunderstorms are regular occurrences from March through June. Exterior fixtures need to be impact-rated (IK08 minimum for exposed locations), and pole-mounted fixtures should be specified with breakaway fuse bases to prevent pole damage in high-wind events.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Arlington's Commercial Districts</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Entertainment District</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The area surrounding AT&T Stadium and Globe Life Field includes hotels, restaurants, retail, and mixed-use developments. Lighting here balances visibility and aesthetics while meeting dark-sky requirements. Facade lighting, parking garage illumination, and pedestrian-scale fixtures are common project types.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Great Southwest Industrial District</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">One of the largest industrial parks in the southern United States. Warehouse and distribution lighting is the primary need — high-bay LED fixtures, dock lighting, exterior security lighting, and parking lot illumination. Many facilities still run 30-year-old HID fixtures consuming 3x the energy of modern LEDs.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">I-20 Commercial Corridor</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">A mix of manufacturing, logistics, and flex-space facilities. Ceiling heights range from 16 feet in older flex spaces to 36+ feet in modern cross-dock facilities. This height variation means every project needs a custom fixture specification.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Cooper Street / UTA Area</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Professional offices, medical facilities, and university-adjacent properties. Lighting requirements lean toward architectural quality — recessed downlights, indirect linear fixtures, and tunable-white systems that support different activities throughout the day.</p>
+      </div>
+    </div>
+
+    <!-- Oncor Rebates -->
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-16">
+      <h3 class="text-xl font-bold mb-4">Oncor Utility Rebates in Arlington</h3>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">Oncor Electric Delivery serves the Arlington area and operates one of the most generous commercial lighting rebate programs in Texas.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-sm font-bold mb-2">Prescriptive Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Interior LED troffers replacing fluorescent: $25–$50/fixture. High-bay LED replacing HID: $50–$100/fixture. Exterior LED replacing HID: $40–$75/fixture.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold mb-2">Custom Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Calculated based on actual energy savings: $0.05–$0.12 per annual kWh saved. A 50,000 sq ft warehouse retrofit saving 200,000 kWh/year can earn $10,000–$24,000 in custom rebates.</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">Oncor rebate applications must be submitted and approved before installation begins. We handle the entire application process at no additional cost.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-950 text-white rounded-2xl p-10 mb-16 text-center">
+      <h2 class="text-2xl font-bold mb-3">Get a Free Lighting Audit in Arlington</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto mb-6">We'll survey your property, measure existing light levels, calculate projected savings from an LED upgrade, and handle the Oncor rebate application — all before you make any commitment.</p>
+      <button onclick="openRFQ('','','Arlington TX — Free Lighting Audit')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+      <p class="text-xs text-gray-500 mt-4">Or email us directly: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Frequently Asked Questions: Commercial Lighting in Arlington, TX</h2>
+    <div class="max-w-2xl mb-16">
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What commercial lighting services does Echelon provide in Arlington, TX?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office lighting upgrades, exterior and security lighting, and lighting controls installation throughout Arlington and the DFW Metroplex. All work is performed by licensed electrical contractors and permitted through the City of Arlington.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does Arlington require permits for commercial lighting work?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. The City of Arlington Building Inspections department requires electrical permits for all commercial lighting installations and modifications. Texas has adopted the 2023 NEC, and all commercial electrical work must be performed by a licensed contractor.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Are there energy rebates for commercial LED upgrades in Arlington?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. Oncor Electric Delivery serves the Arlington area and offers prescriptive and custom rebates for commercial LED upgrades. Interior fixture replacements qualify for $25–$75 per fixture, and custom projects can receive $0.05–$0.12 per annual kWh saved.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What areas near Arlington does Echelon Lighting serve?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon serves all of Arlington plus surrounding DFW communities including Grand Prairie, Mansfield, Kennedale, Pantego, Dalworthington Gardens, and the broader Tarrant County and Dallas County commercial districts.</p>
+      </div>
+      <div class="py-5">
+        <h3 class="text-base font-bold mb-2">How quickly can Echelon start a commercial lighting project in Arlington?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Most Arlington projects move from initial site survey to installation start within 3–5 weeks, depending on fixture lead times and permit processing. Emergency lighting repairs and simple retrofit projects can often begin within 1–2 weeks.</p>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gray-50 rounded-xl p-6">
+      <h3 class="text-sm font-bold mb-4">Explore Our Commercial Lighting Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/blog/commercial-lighting-installation-cost-arlington-tx/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">How Much Does Commercial Lighting Cost in Arlington? →</a>
+        <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse & High-Bay LED Fixtures →</a>
+        <a href="/products/exterior/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Exterior & Parking Lot Lighting →</a>
+        <a href="/products/controls/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Lighting Controls & Energy Management →</a>
+        <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Energy Codes, Rebates & Compliance →</a>
+        <a href="/blog/dlc-vs-energy-star-commercial-lighting/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">DLC vs ENERGY STAR for Commercial LED →</a>
+        <a href="/manufacturers/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Browse 200+ Commercial Lighting Manufacturers →</a>
+        <a href="/regions/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Regional Coverage →</a>
+      </div>
+    </div>
+  </div>
+</Base>
