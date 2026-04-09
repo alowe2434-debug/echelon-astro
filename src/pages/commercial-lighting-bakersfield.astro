@@ -1,0 +1,211 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Echelon Lighting — Bakersfield, CA",
+      "description": "Commercial lighting installation, LED retrofits, and electrical contracting services in Bakersfield, CA.",
+      "url": "https://echelonlighting.com/commercial-lighting-bakersfield/",
+      "areaServed": { "@type": "City", "name": "Bakersfield", "containedInPlace": { "@type": "State", "name": "California" } },
+      "parentOrganization": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "email": "quotes@echelonlighting.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Commercial Lighting Installation",
+      "provider": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "areaServed": { "@type": "City", "name": "Bakersfield", "containedInPlace": { "@type": "State", "name": "California" } },
+      "description": "Full-service commercial lighting installation, LED retrofits, warehouse high-bay upgrades, parking lot lighting, office lighting, and electrical contracting in Bakersfield, CA. California Title 24 compliant."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What commercial lighting services does Echelon provide in Bakersfield, CA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office and retail lighting upgrades, exterior and security lighting, and lighting controls in Bakersfield and throughout Kern County. All installations are California Title 24 compliant and performed by C-10 licensed electrical contractors." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Bakersfield require permits for commercial lighting work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The City of Bakersfield Development Services Department requires electrical permits for all commercial lighting installations and modifications. California has adopted the 2022 NEC (per the 2022 California Electrical Code), and all commercial electrical work must be performed by a C-10 licensed contractor. Echelon handles all permit applications and inspection coordination as part of every project." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there energy rebates for commercial LED upgrades in Bakersfield?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pacific Gas & Electric (PG&E) serves Bakersfield and offers commercial energy efficiency rebates through their Business Energy Advisor program. Interior LED retrofits can qualify for $0.05–$0.15 per kWh saved annually. Prescriptive rebates for high-bay LED conversions run $30–$100 per fixture depending on wattage reduction. PG&E pre-approval is required before installation begins." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is California Title 24 and how does it affect commercial lighting in Bakersfield?",
+          "acceptedAnswer": { "@type": "Answer", "text": "California Title 24 Part 6 (California Energy Code) sets stricter lighting power density limits than federal standards and requires specific controls — occupancy sensors, daylight harvesting, and demand response capability — for most commercial spaces. In Bakersfield, all new commercial construction and major lighting retrofits must comply with Title 24, and projects must be verified by a HERS rater or local inspector. Echelon's designs are engineered to meet 2022 Title 24 requirements." }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can Echelon start a commercial lighting project in Bakersfield?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most Bakersfield projects move from initial site survey to installation start within 3–5 weeks, including photometric design, PG&E rebate pre-approval, and permit processing through the City of Bakersfield. Emergency lighting repairs and simple retrofit projects can often begin within 1–2 weeks." }
+        }
+      ]
+    }
+  ]
+};
+---
+<Base
+  title="Commercial Lighting Installation in Bakersfield, CA | Echelon Lighting"
+  description="Commercial lighting installation and LED retrofit services in Bakersfield, CA. Title 24 compliant. Licensed C-10 electrical contractor serving warehouses, oil & gas facilities, offices, and parking lots throughout Kern County."
+  schema={schema}
+>
+  <!-- Hero -->
+  <div class="bg-gray-950 text-white py-20">
+    <div class="section">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Bakersfield, CA · Commercial Lighting</div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">Commercial Lighting Installation in Bakersfield, CA</h1>
+      <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">Licensed C-10 electrical contractors specializing in commercial LED lighting installation, retrofits, and Title 24-compliant energy upgrades for warehouses, oil and gas facilities, offices, retail, and parking lots throughout Bakersfield and Kern County.</p>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openRFQ('','','Bakersfield CA — Free Lighting Audit')" class="bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Get a Free Lighting Audit in Bakersfield</button>
+        <a href="mailto:quotes@echelonlighting.com" class="bg-white/10 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-white/20 no-underline">quotes@echelonlighting.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section py-16">
+    <h2 class="text-3xl font-bold tracking-tight mb-10">Commercial Lighting Services in Bakersfield</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Warehouse & Industrial Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Bakersfield's logistics and distribution sector is anchored along the Highway 99 corridor and the Stockdale Highway industrial belt. We install and retrofit LED high-bay systems for distribution centers, food processing facilities, and industrial buildings ranging from 10,000 to 500,000+ square feet. Standard installations use 150W–240W UFO or linear LED high-bays replacing 400W–1000W HID lamps — cutting energy by 55–70% while delivering better uniformity and 80+ CRI for detailed work tasks. All designs meet California Title 24 LPD requirements for warehouse spaces (0.66 W/sq ft or better).</p>
+        <a href="/products/high-bay/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View warehouse lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Oil, Gas & Heavy Industrial</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Bakersfield sits at the heart of California's San Joaquin Valley oil fields. Facilities in Class 1 Division 2 (C1D2) hazardous locations require explosion-proof or intrinsically safe rated fixtures that standard commercial contractors don't typically spec or install. Echelon designs and installs lighting for pump stations, compressor buildings, tank farms, and processing facilities with the correct hazardous location ratings — T-code compliant, Class I Division 2 Group D suitable for the gas types commonly found in Kern County operations.</p>
+        <a href="/applications/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View industrial lighting solutions →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Parking Lot & Exterior Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Bakersfield's extreme summer heat — the Central Valley regularly sees 105–115°F from June through September — is the defining challenge for exterior lighting. LED drivers and fixture housings must be rated for operation in 55°C+ ambient conditions. We specify high-temperature-rated LED area lights with full-cutoff optics, hot-rated drivers, and aluminum die-cast housings that handle the San Joaquin Valley's thermal swings. All exterior installations comply with Bakersfield's outdoor lighting standards and California's requirements for dark-sky-friendly optics.</p>
+        <a href="/products/exterior/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View exterior lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">LED Retrofit & Title 24 Compliance</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California's Title 24 energy code requires specific controls — occupancy sensors, daylight dimming, and demand response — on virtually all commercial lighting upgrades over a threshold size. We design retrofit projects from the ground up to meet 2022 Title 24 Part 6 requirements, including the mandatory controls, HERS verification documentation, and Certificate of Compliance forms. PG&E rebate applications are submitted before work begins. Most Bakersfield retrofits pay back in 2–3 years after PG&E rebates.</p>
+        <a href="/compliance/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View energy compliance & rebate info →</a>
+      </div>
+
+    </div>
+
+    <!-- Bakersfield-Specific Content -->
+    <h2 class="text-3xl font-bold tracking-tight mb-6">Why Bakersfield Commercial Properties Need Specialized Lighting</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">California Title 24 Requirements</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California's 2022 Title 24 Part 6 (California Energy Code) sets the most stringent commercial lighting standards in the United States. Every commercial project in Bakersfield must comply — from a 2,000 sq ft office retrofit to a new 500,000 sq ft distribution center.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The key Title 24 requirements for commercial lighting: all new and substantially altered interior lighting systems must include occupancy sensors (or vacancy sensors for small offices), daylight-responsive controls in daylit zones within 15 feet of windows, and demand response controls for facilities over 10,000 sq ft served by utilities with demand response programs.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">For lighting power density, Title 24 2022 sets warehouse spaces at 0.66 W/sq ft, office spaces at 0.82 W/sq ft, and retail at 1.11 W/sq ft. Most modern LED systems hit 0.30–0.45 W/sq ft — well under the limits. But the controls requirements are what trip up out-of-state contractors unfamiliar with California code.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Extreme Heat and Climate Considerations</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Bakersfield is one of the hottest cities in California. The San Joaquin Valley regularly records temperatures above 110°F in summer, and ambient temperatures inside non-air-conditioned industrial spaces can reach 120°F. This is outside the operating range of most standard commercial LED drivers.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">For all non-conditioned spaces in Bakersfield — warehouses, covered parking, exterior canopies, utility rooms — we specify fixtures with drivers rated for at least 55°C ambient (many go to 65°C). Look for products specifically labeled for "high ambient" operation and verify the driver's junction temperature derating curve.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Exterior fixtures also face UV degradation from Bakersfield's high sun exposure and particulate dust from the Valley's agricultural operations. IP66-rated housings with sealed optical compartments prevent the dust ingress that ruins most exterior fixtures within 3–4 years in this environment.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Bakersfield's Commercial Districts</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Highway 99 Logistics Corridor</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Bakersfield's primary industrial corridor runs along Highway 99 south and east of the city center. Large distribution centers, food processing plants, and manufacturing facilities dominate this zone. Ceiling heights range from 20 feet in older buildings to 40+ feet in modern cross-dock facilities. High-bay LED lighting with occupancy controls is the standard upgrade in this corridor.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Oil Field Support Services (East / SE Bakersfield)</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Facilities supporting Kern County's oil and gas industry require hazardous location ratings in some areas. C1D2 lighting in compressor rooms, pump houses, and chemical storage. Standard LED fixtures aren't code-compliant in these spaces — proper hazardous location ratings are required under both NFPA 70 and California Fire Code.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Downtown & Civic Center</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Downtown Bakersfield has seen significant reinvestment with office, hospitality, and mixed-use development around Chester Avenue. Architectural and decorative lighting for restaurant and hotel interiors, combined with secure pedestrian-scale exterior lighting. Title 24 compliance with good aesthetics is the design goal here.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Stockdale / Ming Ave Retail Corridor</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Bakersfield's primary retail belt runs along Stockdale Highway and Ming Avenue. Shopping centers, car dealerships, medical offices, and restaurant pads. Exterior canopy lighting, parking lot illumination, and interior retrofit projects are common. Energy rebates from PG&E on qualifying fixtures make ROI timelines particularly short in this corridor.</p>
+      </div>
+    </div>
+
+    <!-- PG&E Rebates -->
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-16">
+      <h3 class="text-xl font-bold mb-4">PG&E Energy Efficiency Rebates in Bakersfield</h3>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">Pacific Gas & Electric (PG&E) serves the Bakersfield commercial market and offers one of the most comprehensive commercial energy efficiency rebate programs in California. Projects in Bakersfield can stack PG&E rebates with California utility incentives for significant upfront cost offsets.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-sm font-bold mb-2">Prescriptive Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Linear fluorescent to LED: $20–$40 per fixture. High-bay LED replacing HID: $30–$100 per fixture depending on wattage reduction. Exterior LED replacing HID: $35–$80 per fixture. Lighting controls (occupancy sensors, daylight sensors): $40–$120 per sensor.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold mb-2">Custom Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">For larger projects, PG&E's custom program calculates rebates based on actual kWh reduction: $0.05–$0.15 per annual kWh saved. A 100,000 sq ft warehouse retrofit saving 400,000 kWh annually can earn $20,000–$60,000 in custom rebates.</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">PG&E pre-approval is required before installation begins. We handle the complete application process, including the pre-installation inspection, at no additional charge.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-950 text-white rounded-2xl p-10 mb-16 text-center">
+      <h2 class="text-2xl font-bold mb-3">Get a Free Lighting Audit in Bakersfield</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto mb-6">We'll walk your facility, run a Title 24 compliance review, calculate projected energy savings, and handle the PG&E pre-approval — all before you commit to anything.</p>
+      <button onclick="openRFQ('','','Bakersfield CA — Free Lighting Audit')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+      <p class="text-xs text-gray-500 mt-4">Or email us directly: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Frequently Asked Questions: Commercial Lighting in Bakersfield, CA</h2>
+    <div class="max-w-2xl mb-16">
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What commercial lighting services does Echelon provide in Bakersfield?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, oil and gas hazardous location lighting, parking lot lighting, office lighting upgrades, and Title 24-compliant controls installation throughout Bakersfield and Kern County. All work is performed by C-10 licensed electrical contractors.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does Bakersfield require permits for commercial lighting work?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. The City of Bakersfield Development Services Department requires electrical permits for all commercial lighting installations and modifications. California uses the 2022 California Electrical Code (based on NEC 2022), and all commercial work must be performed by a C-10 licensed contractor.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Are there energy rebates for commercial LED upgrades in Bakersfield?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. PG&E offers prescriptive and custom rebates for commercial LED upgrades. Prescriptive rebates run $20–$100 per fixture depending on fixture type and wattage reduction. Custom rebates for large projects are calculated at $0.05–$0.15 per annual kWh saved. Pre-approval must happen before installation begins.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What is California Title 24 and how does it affect commercial lighting in Bakersfield?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Title 24 Part 6 is California's energy code — stricter than federal standards and mandatory for all commercial projects. It requires occupancy sensors, daylight controls in daylit zones, and demand response capability. All Echelon designs are engineered to comply with 2022 Title 24 requirements.</p>
+      </div>
+      <div class="py-5">
+        <h3 class="text-base font-bold mb-2">How quickly can Echelon start a commercial lighting project in Bakersfield?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Most Bakersfield projects move from site survey to installation start in 3–5 weeks, including design, PG&E pre-approval, and permit processing. Emergency repairs and simple retrofits can often start within 1–2 weeks.</p>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gray-50 rounded-xl p-6">
+      <h3 class="text-sm font-bold mb-4">Explore Our Commercial Lighting Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/blog/commercial-lighting-installation-cost-arlington-tx/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting Cost Guide (Arlington, TX) →</a>
+        <a href="/blog/commercial-lighting-installation-cost-tampa-fl/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting Cost Guide (Tampa, FL) →</a>
+        <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse & High-Bay LED Fixtures →</a>
+        <a href="/products/exterior/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Exterior & Parking Lot Lighting →</a>
+        <a href="/products/controls/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Lighting Controls & Energy Management →</a>
+        <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Title 24, PG&E Rebates & Compliance →</a>
+        <a href="/blog/title-24-jab-certification-explained/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">California Title 24 JA8 Certification Guide →</a>
+        <a href="/manufacturers/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Browse 200+ Commercial Lighting Manufacturers →</a>
+        <a href="/commercial-lighting-arlington/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Arlington, TX →</a>
+        <a href="/regions/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Regional Coverage →</a>
+      </div>
+    </div>
+  </div>
+</Base>
