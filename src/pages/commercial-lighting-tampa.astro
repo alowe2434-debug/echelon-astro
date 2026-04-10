@@ -1,0 +1,207 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Echelon Lighting — Tampa, FL",
+      "description": "Commercial lighting installation, LED retrofits, and electrical contracting services in Tampa, FL.",
+      "url": "https://echelonlighting.com/commercial-lighting-tampa/",
+      "areaServed": { "@type": "City", "name": "Tampa", "containedInPlace": { "@type": "State", "name": "Florida" } },
+      "parentOrganization": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "email": "quotes@echelonlighting.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Commercial Lighting Installation",
+      "provider": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "areaServed": { "@type": "City", "name": "Tampa", "containedInPlace": { "@type": "State", "name": "Florida" } },
+      "description": "Full-service commercial lighting installation, LED retrofits, parking lot lighting, warehouse high-bay upgrades, and electrical contracting in Tampa, FL."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What commercial lighting services does Echelon provide in Tampa, FL?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office lighting upgrades, exterior and security lighting, and lighting controls installation throughout Tampa and the greater Tampa Bay area. All work is performed by licensed electrical contractors and permitted through the City of Tampa." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Tampa require permits for commercial lighting work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The City of Tampa Construction Services Center requires electrical permits for all commercial lighting installations and modifications. Florida has adopted the 2023 NEC (8th Edition of the Florida Building Code), and all commercial electrical work must be performed by a licensed contractor. Echelon handles all permit applications and inspection scheduling as part of every project." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there energy rebates for commercial LED upgrades in Tampa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tampa Electric (TECO) offers commercial rebates for qualifying LED upgrades through their Conservation Programs. Interior LED retrofits can earn $0.10–$0.15 per kWh saved annually, and prescriptive rebates for common fixture upgrades are also available. Duke Energy also serves parts of the Tampa metro and offers similar programs. Echelon manages the entire rebate application process." }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas near Tampa does Echelon Lighting serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon serves all of Tampa plus surrounding Tampa Bay communities including St. Petersburg, Clearwater, Brandon, Temple Terrace, Plant City, Riverview, Wesley Chapel, and the broader Hillsborough and Pinellas County commercial districts." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Florida's hurricane code affect commercial lighting installations?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Florida Building Code requires exterior lighting fixtures in Tampa to meet High-Velocity Hurricane Zone (HVHZ) requirements or equivalent wind-load ratings. Pole-mounted fixtures must be engineered for 150+ mph wind loads. All exterior electrical connections need weatherproof enclosures rated for driving rain. Echelon specifies fixtures that meet or exceed these requirements on every project." }
+        }
+      ]
+    }
+  ]
+};
+---
+<Base
+  title="Commercial Lighting Installation in Tampa, FL | Echelon Lighting"
+  description="Commercial lighting installation and LED retrofit services in Tampa, FL. Licensed electrical contractor serving warehouses, offices, and parking lots across the Tampa Bay area."
+  schema={schema}
+>
+  <!-- Hero -->
+  <div class="bg-gray-950 text-white py-20">
+    <div class="section">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Tampa, FL · Commercial Lighting</div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">Commercial Lighting Installation in Tampa, FL</h1>
+      <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">Licensed electrical contractors specializing in commercial LED lighting installation, retrofits, and energy upgrades for warehouses, offices, retail spaces, and parking facilities throughout Tampa and the Tampa Bay region.</p>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openRFQ('','','Tampa FL — Free Lighting Audit')" class="bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Get a Free Lighting Audit in Tampa</button>
+        <a href="mailto:quotes@echelonlighting.com" class="bg-white/10 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-white/20 no-underline">quotes@echelonlighting.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section py-16">
+    <h2 class="text-3xl font-bold tracking-tight mb-10">Commercial Lighting Services in Tampa</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Warehouse & Industrial Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Tampa's East Tampa industrial corridor, the Port Tampa Bay logistics zone, and the I-4 distribution hub contain hundreds of warehouses and distribution centers ranging from 15,000 to 600,000+ square feet. We install and retrofit LED high-bay lighting systems using 150W–240W fixtures that replace 400W–1000W metal halide and HPS lamps, cutting energy consumption by 50–70% while improving light uniformity across your entire floor area.</p>
+        <a href="/products/high-bay/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View warehouse lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Office & Professional Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">From the high-rises in downtown Tampa's Westshore business district to the medical offices along Bayshore Boulevard and professional parks in Carrollwood, we design and install office lighting systems that meet the Florida Energy Conservation Code while creating productive, comfortable work environments. Our packages include recessed LED troffers, architectural downlights, linear suspended fixtures, and tunable-white systems with DALI dimming and daylight harvesting.</p>
+        <a href="/applications/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View office lighting solutions →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Parking Lot & Exterior Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Tampa's subtropical climate creates unique demands for exterior lighting. Constant humidity accelerates corrosion on improperly rated fixtures, and hurricane season (June through November) requires pole-mounted fixtures engineered for 150+ mph wind loads per the Florida Building Code. We install LED area lights, full-cutoff wall packs, bollard lighting, and security fixtures — all specified with marine-grade finishes and IP66 minimum ratings for Tampa's salt-air environment.</p>
+        <a href="/products/exterior/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View exterior lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">LED Retrofit & Energy Upgrades</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Already have working fixtures but paying too much in electricity? Tampa Electric (TECO) rates have increased 12% over the past two years, making LED retrofits more cost-effective than ever. Our retrofit program replaces the internals of your existing fixtures — same housing, new technology. Retrofit projects cost 30–50% less than full replacements and deliver the same energy savings. We handle the complete TECO rebate application process.</p>
+        <a href="/compliance/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View energy compliance & rebate info →</a>
+      </div>
+
+    </div>
+
+    <!-- Tampa-Specific Content -->
+    <h2 class="text-3xl font-bold tracking-tight mb-6">Why Tampa Properties Need Specialized Commercial Lighting</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">Local Building Codes and Permits</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The City of Tampa enforces the 8th Edition of the Florida Building Code, which incorporates the 2023 NEC for all commercial electrical work. Every commercial lighting installation requires an electrical permit from the Tampa Construction Services Center. Permit processing takes 5–15 business days for standard commercial projects. Our team handles the entire permit process as part of every project scope.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Florida's Energy Conservation Code sets maximum lighting power density (LPD) requirements by building type. Office spaces are capped at 0.82 watts per square foot, retail at 1.06 W/sq ft, and warehouses at 0.66 W/sq ft. All new construction and major renovations must demonstrate compliance through a mandatory energy code compliance form signed by the electrical contractor.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Climate and Hurricane Considerations</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Tampa's subtropical climate creates aggressive conditions for exterior lighting. Average humidity runs 73–78% year-round, with summer heat indices regularly exceeding 110°F. LED drivers need to be rated for 50°C+ ambient operation, and all exterior housings require marine-grade corrosion resistance given the salt-air exposure across the Tampa Bay watershed.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">The Florida Building Code mandates wind-load engineering for exterior fixtures based on the local design wind speed — Tampa falls in the 150 mph zone. Pole-mounted fixtures need breakaway fuse bases, and all exterior electrical connections require listed weatherproof enclosures rated for wind-driven rain. Lightning protection is also critical — Tampa averages 80+ lightning days per year, making proper surge protection and grounding essential for every exterior lighting installation.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Tampa's Commercial Districts</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Westshore Business District</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Tampa's largest office market with over 12 million square feet of Class A and B office space. Projects here focus on architectural-grade lighting — recessed downlights, indirect linear fixtures, and lobby feature lighting. Energy code compliance is strictly enforced on tenant improvement projects.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Port Tampa Bay & East Tampa Industrial</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Port Tampa Bay is Florida's largest cargo port, surrounded by warehouses, cold storage facilities, and distribution centers. High-bay LED retrofits and dock lighting upgrades are the primary project types. Many facilities still operate 25-year-old HPS fixtures consuming 3x the energy of modern LEDs.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">I-4 Corridor / Brandon</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The I-4 corridor east of Tampa hosts major retail centers, flex-industrial parks, and logistics facilities serving central Florida. Ceiling heights range from 16 feet in older flex spaces to 40+ feet in modern e-commerce fulfillment centers. Every project needs a custom fixture specification based on mounting height and required foot-candle levels.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Downtown Tampa / Water Street</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Tampa's downtown is undergoing a $3.5 billion transformation with the Water Street Tampa development. New mixed-use commercial spaces, hotels, and Class A offices demand high-end architectural lighting with smart controls, WELL Building Standard compliance, and integrated daylighting systems.</p>
+      </div>
+    </div>
+
+    <!-- TECO Rebates -->
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-16">
+      <h3 class="text-xl font-bold mb-4">Tampa Electric (TECO) Utility Rebates</h3>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">Tampa Electric Company (TECO) serves the Tampa area and offers commercial rebates through their Conservation Programs for qualifying LED upgrades.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-sm font-bold mb-2">Prescriptive Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Interior LED troffers replacing fluorescent: $20–$50/fixture. High-bay LED replacing HID: $50–$100/fixture. Exterior LED replacing HID: $40–$80/fixture. LED exit signs: $5–$10 each.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold mb-2">Custom Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Calculated based on actual energy savings: $0.10–$0.15 per annual kWh saved. A 50,000 sq ft warehouse retrofit saving 200,000 kWh/year can earn $20,000–$30,000 in custom rebates — significantly higher than many other markets.</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">TECO rebate applications must be submitted and approved before installation begins. We handle the entire application process at no additional cost.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-950 text-white rounded-2xl p-10 mb-16 text-center">
+      <h2 class="text-2xl font-bold mb-3">Get a Free Lighting Audit in Tampa</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto mb-6">We'll survey your property, measure existing light levels, calculate projected savings from an LED upgrade, and handle the TECO rebate application — all before you make any commitment.</p>
+      <button onclick="openRFQ('','','Tampa FL — Free Lighting Audit')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+      <p class="text-xs text-gray-500 mt-4">Or email us directly: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Frequently Asked Questions: Commercial Lighting in Tampa, FL</h2>
+    <div class="max-w-2xl mb-16">
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What commercial lighting services does Echelon provide in Tampa, FL?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office lighting upgrades, exterior and security lighting, and lighting controls installation throughout Tampa and the greater Tampa Bay area. All work is performed by licensed electrical contractors and permitted through the City of Tampa.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does Tampa require permits for commercial lighting work?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. The City of Tampa Construction Services Center requires electrical permits for all commercial lighting installations and modifications. Florida has adopted the 2023 NEC (8th Edition of the Florida Building Code), and all commercial electrical work must be performed by a licensed contractor.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Are there energy rebates for commercial LED upgrades in Tampa?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. Tampa Electric (TECO) offers commercial rebates through their Conservation Programs for qualifying LED upgrades. Rebates can reach $0.10–$0.15 per kWh saved annually, and prescriptive rebates cover common fixture types at $20–$100 per fixture depending on the application.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">How does Florida's hurricane code affect commercial lighting installations?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">The Florida Building Code requires exterior lighting fixtures in Tampa to meet wind-load ratings for the 150 mph design wind speed zone. Pole-mounted fixtures must be engineered for these loads, and all exterior connections need weatherproof enclosures rated for wind-driven rain. Echelon specifies fixtures that meet or exceed these requirements on every project.</p>
+      </div>
+      <div class="py-5">
+        <h3 class="text-base font-bold mb-2">What areas near Tampa does Echelon Lighting serve?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon serves all of Tampa plus surrounding Tampa Bay communities including St. Petersburg, Clearwater, Brandon, Temple Terrace, Plant City, Riverview, Wesley Chapel, and the broader Hillsborough and Pinellas County commercial districts.</p>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gray-50 rounded-xl p-6">
+      <h3 class="text-sm font-bold mb-4">Explore Our Commercial Lighting Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/blog/commercial-lighting-installation-cost-tampa-fl/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">How Much Does Commercial Lighting Cost in Tampa? →</a>
+        <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse & High-Bay LED Fixtures →</a>
+        <a href="/products/exterior/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Exterior & Parking Lot Lighting →</a>
+        <a href="/products/controls/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Lighting Controls & Energy Management →</a>
+        <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Energy Codes, Rebates & Compliance →</a>
+        <a href="/commercial-lighting-arlington/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Arlington, TX →</a>
+        <a href="/commercial-lighting-bakersfield/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Bakersfield, CA →</a>
+        <a href="/blog/how-to-read-commercial-lighting-schedule/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">How to Read a Commercial Lighting Schedule →</a>
+      </div>
+    </div>
+  </div>
+</Base>
