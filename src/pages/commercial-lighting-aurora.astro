@@ -1,0 +1,223 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Echelon Lighting — Aurora, CO",
+      "description": "Commercial lighting installation, LED retrofits, and electrical contracting services in Aurora, CO.",
+      "url": "https://echelonlighting.com/commercial-lighting-aurora/",
+      "areaServed": { "@type": "City", "name": "Aurora", "containedInPlace": { "@type": "State", "name": "Colorado" } },
+      "parentOrganization": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "email": "quotes@echelonlighting.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Commercial Lighting Installation",
+      "provider": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "areaServed": { "@type": "City", "name": "Aurora", "containedInPlace": { "@type": "State", "name": "Colorado" } },
+      "description": "Full-service commercial lighting installation, LED retrofits, warehouse high-bay upgrades, parking lot lighting, and electrical contracting in Aurora, CO."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What commercial lighting services does Echelon provide in Aurora, CO?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon Lighting provides commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office lighting upgrades, exterior and security lighting, and lighting controls installation throughout Aurora and the Denver metro area. All work is performed by licensed electrical contractors and permitted through the City of Aurora Building Division." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Aurora require permits for commercial lighting work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The City of Aurora Building Division requires electrical permits for all commercial lighting installations and modifications. Colorado follows the 2023 NEC, and all commercial electrical work must be performed by a Colorado-licensed electrical contractor. Aurora typically processes commercial electrical permits within 5–10 business days for standard projects." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there energy rebates for commercial LED upgrades in Aurora?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Xcel Energy serves Aurora and offers commercial rebates through their Lighting Efficiency program. Prescriptive rebates for high-bay LED fixtures range from $50–$150 per fixture depending on wattage reduction. Custom rebates pay $0.03–$0.06 per kWh saved annually. Applications must be submitted before installation begins." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Aurora's high altitude affect LED lighting performance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Aurora sits at 5,471 feet elevation where air density is 17% lower than sea level. This reduces convective cooling on LED drivers, causing them to run hotter and potentially fail prematurely. All fixtures for Aurora commercial projects should use drivers rated for high-altitude operation (5,000-meter minimum). This is the most common specification mistake on Aurora projects." }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas near Aurora does Echelon Lighting serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon serves all of Aurora plus the broader Denver metro including Denver, Centennial, Parker, Englewood, Littleton, Commerce City, Brighton, and the entire I-70 and E-470 commercial corridor. We also serve Colorado Springs, Fort Collins, and other Front Range communities for larger commercial projects." }
+        }
+      ]
+    }
+  ]
+};
+---
+<Base
+  title="Commercial Lighting Installation in Aurora, CO | Echelon Lighting"
+  description="Commercial lighting installation and LED retrofit services in Aurora, CO. Licensed electrical contractor serving warehouses, offices, and parking lots across the Denver metro."
+  schema={schema}
+>
+  <!-- Hero -->
+  <div class="bg-gray-950 text-white py-20">
+    <div class="section">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Aurora, CO · Commercial Lighting</div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">Commercial Lighting Installation in Aurora, CO</h1>
+      <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">Licensed electrical contractors specializing in commercial LED lighting installation, retrofits, and energy upgrades for warehouses, offices, retail spaces, and parking facilities throughout Aurora and the Denver metro region. High-altitude rated fixtures specified for every project.</p>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openRFQ('','','Aurora CO — Free Lighting Audit')" class="bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Get a Free Lighting Audit in Aurora</button>
+        <a href="mailto:quotes@echelonlighting.com" class="bg-white/10 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-white/20 no-underline">quotes@echelonlighting.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section py-16">
+    <h2 class="text-3xl font-bold tracking-tight mb-10">Commercial Lighting Services in Aurora</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Warehouse & Industrial Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Aurora's I-70 corridor and E-470 logistics hub contain over 30 million square feet of warehouse and distribution space — one of the fastest-growing industrial markets along the Front Range. We install and retrofit LED high-bay lighting systems using 150W–300W fixtures that replace 400W–1000W metal halide and HPS lamps, cutting energy consumption by 50–70%. Every fixture is specified with high-altitude rated drivers for reliable operation at 5,400+ feet.</p>
+        <a href="/blog/warehouse-lighting-aurora-co/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">Warehouse lighting guide for Aurora →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Office & Professional Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">From the medical offices along I-225 and Hampden Avenue to the professional complexes in Southlands and the Fitzsimons Innovation Campus, we design and install office lighting systems that meet the 2021 IECC as adopted by Colorado while creating productive work environments. Our packages include recessed LED troffers, architectural downlights, linear suspended fixtures, and tunable-white systems with DALI dimming and daylight harvesting — particularly effective with Aurora's 300+ sunny days per year.</p>
+        <a href="/applications/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View office lighting solutions →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Parking Lot & Exterior Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Aurora's climate demands cold-rated exterior fixtures that handle temperature swings from -10°F winters to 95°F+ summers. We install LED area lights, full-cutoff wall packs, bollard lighting, and security fixtures — all specified with cold-start rated drivers (-40°C minimum), high-altitude rated components, and impact-resistant tempered glass lenses to withstand Colorado's hailstorms. Every exterior installation includes surge protection for Front Range lightning events.</p>
+        <a href="/products/exterior/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View exterior lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">LED Retrofit & Energy Upgrades</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Xcel Energy rates have increased steadily, making LED retrofits one of the fastest-ROI capital investments for Aurora commercial properties. Our retrofit program replaces outdated HID and fluorescent internals with high-efficacy LED technology — same mounting points, dramatically lower energy consumption. A typical warehouse retrofit pays for itself in 2–4 years through electricity savings, and Xcel Energy rebates accelerate that payback further. We handle the entire rebate application process.</p>
+        <a href="/compliance/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View energy compliance & rebate info →</a>
+      </div>
+
+    </div>
+
+    <!-- Aurora-Specific Content -->
+    <h2 class="text-3xl font-bold tracking-tight mb-6">Why Aurora Properties Need Specialized Commercial Lighting</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">High-Altitude Performance Requirements</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Aurora sits at 5,471 feet elevation — high enough to materially affect LED fixture performance. Air density at this altitude is approximately 17% lower than at sea level, which reduces convective cooling efficiency on LED drivers. Standard fixtures rated for sea-level operation run hotter in Aurora, leading to accelerated lumen depreciation and premature driver failure.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Every fixture we specify for Aurora projects uses drivers rated for 5,000-meter (16,400-foot) high-altitude operation. Major driver manufacturers like Meanwell, Inventronics, and Philips Advance all produce high-altitude models, but they are not standard — you have to specifically request them. This single specification detail is the most common mistake we see on Aurora commercial lighting projects.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Local Building Codes and Permits</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The City of Aurora Building Division requires electrical permits for all commercial lighting installations and modifications. Colorado has adopted the 2023 NEC for all commercial electrical work, and a Colorado-licensed electrical contractor must perform and sign off on the work. Aurora processes commercial electrical permits within 5–10 business days for standard projects, with plan review adding 10–15 business days for complex projects involving panel upgrades or service changes.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Colorado also enforces the 2021 International Energy Conservation Code (IECC) with state amendments, which sets maximum lighting power density (LPD) requirements by building type. New construction and major renovations must demonstrate energy code compliance. Our engineering team prepares all compliance documentation as part of the project scope.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Aurora's Commercial Districts</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">I-70 / E-470 Industrial Corridor</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Aurora's primary warehouse and logistics zone with 30+ million square feet of industrial space. Major tenants include Amazon, FedEx, and UPS distribution facilities. Projects focus on high-bay LED retrofits for 24–40 foot clear-height warehouses, dock lighting upgrades, and energy management controls for 24/7 operations.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Fitzsimons Innovation Campus / Anschutz Medical</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The 578-acre Fitzsimons campus includes the University of Colorado Anschutz Medical Campus and the Fitzsimons Innovation Community. Projects here demand architectural-grade lighting with precise color rendering (CRI 90+) for medical and laboratory environments, plus compliant emergency egress lighting per NFPA 101.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Southlands Town Center</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Aurora's premier mixed-use retail and entertainment district with over 1 million square feet of commercial space. Retail lighting projects require decorative fixtures that meet design guidelines, precise foot-candle levels for merchandise display, and parking lot lighting engineered for Colorado's freeze-thaw cycles and occasional hailstorms.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Havana Street / Colfax Corridor</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Aurora's historic commercial spine running through the heart of the city. A mix of small retail, restaurant, professional offices, and municipal buildings. Many properties still operate original fluorescent and HID lighting from the 1980s and 1990s — prime candidates for LED retrofits that deliver immediate energy savings with minimal disruption.</p>
+      </div>
+    </div>
+
+    <!-- Xcel Energy Rebates -->
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-16">
+      <h3 class="text-xl font-bold mb-4">Xcel Energy Rebates for Aurora Commercial Properties</h3>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">Xcel Energy serves Aurora and operates one of Colorado's strongest commercial lighting rebate programs through their Lighting Efficiency initiative.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-sm font-bold mb-2">Prescriptive Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">High-bay LED replacing 400W HID: $75–$100/fixture. High-bay LED replacing 1000W HID: $100–$150/fixture. Interior LED troffers replacing fluorescent: $25–$50/fixture. Exterior LED replacing HID: $40–$75/fixture. Occupancy sensors: $15–$30/sensor.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold mb-2">Custom Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Calculated at $0.03–$0.06 per annual kWh saved. A 50,000 sq ft warehouse retrofit saving 180,000 kWh/year earns $5,400–$10,800 in custom rebates. Custom pathway requires pre-installation energy analysis — we prepare all documentation as part of our standard project scope.</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">Xcel Energy rebate applications must be submitted and approved before installation begins. We handle the entire application process at no additional cost.</p>
+    </div>
+
+    <!-- Climate Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">Cold Weather and Snow Considerations</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Aurora averages 57 inches of snow annually, with winter temperatures regularly dropping below 0°F. These conditions demand cold-start rated LED drivers (-40°C minimum operating temperature) for exterior and unheated interior applications. Standard drivers with -20°C ratings fail during startup surges in extreme cold, leaving your property dark on the coldest nights.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Snow load on older warehouse roofs also affects pendant-mounted fixture stability. We assess roof structure deflection as part of every warehouse lighting survey before recommending mounting configurations to ensure fixture stability through winter.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Hail and Storm Protection</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Colorado's Front Range is the most hail-prone region in the United States. Aurora averages 3–5 significant hail events per year, with occasional storms producing 2-inch+ hailstones. Exterior lighting fixtures take direct hits, and polycarbonate lenses can crack or shatter under severe hail impact.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">We specify tempered glass lenses with IK10 impact ratings for all exterior Aurora installations. Surge protection devices (SPDs) rated for 10kA minimum are installed on every exterior circuit to protect against lightning-induced transients common during Front Range thunderstorms.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-950 text-white rounded-2xl p-10 mb-16 text-center">
+      <h2 class="text-2xl font-bold mb-3">Get a Free Lighting Audit in Aurora</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto mb-6">We'll survey your property, measure existing light levels, specify the right high-altitude fixtures, calculate projected savings from an LED upgrade, and handle the Xcel Energy rebate application — all before you make any commitment.</p>
+      <button onclick="openRFQ('','','Aurora CO — Free Lighting Audit')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+      <p class="text-xs text-gray-500 mt-4">Or email us directly: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Frequently Asked Questions: Commercial Lighting in Aurora, CO</h2>
+    <div class="max-w-2xl mb-16">
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What commercial lighting services does Echelon provide in Aurora, CO?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon Lighting provides commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot lighting, office lighting upgrades, exterior and security lighting, and lighting controls installation throughout Aurora and the Denver metro area. All work is performed by licensed electrical contractors and permitted through the City of Aurora Building Division.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does Aurora require permits for commercial lighting work?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. The City of Aurora Building Division requires electrical permits for all commercial lighting installations. Colorado follows the 2023 NEC, and all commercial electrical work must be performed by a Colorado-licensed electrical contractor. Aurora processes permits within 5–10 business days for standard projects.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Are there energy rebates for commercial LED upgrades in Aurora?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. Xcel Energy offers prescriptive rebates of $25–$150 per fixture depending on the type and wattage reduction, plus custom rebates of $0.03–$0.06 per kWh saved annually. Applications must be submitted before installation. We handle the complete rebate process as part of every project.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does Aurora's high altitude affect LED lighting performance?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. At 5,471 feet, air density is 17% lower than sea level, reducing convective cooling on LED drivers. Fixtures run hotter and fail prematurely unless drivers are rated for high-altitude operation (5,000-meter minimum). We specify high-altitude rated drivers on every Aurora project to prevent premature failure.</p>
+      </div>
+      <div class="py-5">
+        <h3 class="text-base font-bold mb-2">What areas near Aurora does Echelon Lighting serve?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon serves all of Aurora plus the broader Denver metro including Denver, Centennial, Parker, Englewood, Littleton, Commerce City, Brighton, and the entire I-70 and E-470 commercial corridor.</p>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gray-50 rounded-xl p-6">
+      <h3 class="text-sm font-bold mb-4">Explore Our Commercial Lighting Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/blog/warehouse-lighting-aurora-co/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse Lighting in Aurora, CO: Full Guide →</a>
+        <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse & High-Bay LED Fixtures →</a>
+        <a href="/products/exterior/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Exterior & Parking Lot Lighting →</a>
+        <a href="/products/controls/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Lighting Controls & Energy Management →</a>
+        <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Energy Codes, Rebates & Compliance →</a>
+        <a href="/commercial-lighting-arlington/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Arlington, TX →</a>
+        <a href="/commercial-lighting-bakersfield/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Bakersfield, CA →</a>
+        <a href="/commercial-lighting-tampa/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Tampa, FL →</a>
+        <a href="/blog/parking-lot-lighting-bakersfield-ca/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Parking Lot Lighting in Bakersfield, CA →</a>
+        <a href="/blog/how-to-read-commercial-lighting-schedule/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">How to Read a Commercial Lighting Schedule →</a>
+      </div>
+    </div>
+  </div>
+</Base>

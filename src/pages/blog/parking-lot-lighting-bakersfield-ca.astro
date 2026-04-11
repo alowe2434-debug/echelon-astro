@@ -1,0 +1,220 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does parking lot lighting cost in Bakersfield, CA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parking lot lighting in Bakersfield costs $2,500 to $5,500 per pole for new installations using 20–30 foot aluminum poles with LED area lights. A typical 50-space commercial parking lot with 8–12 poles runs $25,000–$60,000 fully installed including trenching, conduit, wiring, and pole bases. LED retrofit projects that reuse existing poles cost $800–$2,000 per fixture. PG&E rebates can offset 10–20% of total project costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What light levels does Bakersfield require for commercial parking lots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bakersfield follows California Title 24 and IES RP-20 guidelines. Minimum maintained illuminance for open parking lots is 0.5 foot-candles, with 1.0 foot-candle recommended for areas with pedestrian activity. Covered parking structures require 5.0 foot-candles at the driving surface. Title 24 also caps lighting power density at 0.04 watts per square foot for uncovered lots, requiring high-efficacy LED fixtures of 130+ lumens per watt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Bakersfield require permits for parking lot lighting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The City of Bakersfield Building Division requires electrical permits for all commercial parking lot lighting installations. California requires a C-10 Electrical Contractor license for this work. Permit processing typically takes 10–15 business days for plan check. Bakersfield also enforces dark sky provisions under the Kern County Zoning Ordinance, requiring full-cutoff fixtures to minimize light trespass and sky glow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there utility rebates for LED parking lot lights in Bakersfield?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Pacific Gas & Electric (PG&E) serves Bakersfield and offers commercial outdoor lighting rebates through their energy efficiency programs. Prescriptive rebates for exterior LED fixtures replacing HID lamps range from $50–$200 per fixture depending on wattage reduction. Custom rebates based on calculated kWh savings are also available for larger projects. All rebate applications must be submitted before installation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a parking lot lighting project take in Bakersfield?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A complete parking lot lighting installation in Bakersfield takes 4–8 weeks from design to energization. This includes 1–2 weeks for photometric design and permit preparation, 10–15 business days for City plan check, 1–2 weeks for fixture and pole procurement, and 3–7 days for installation depending on the number of poles and whether trenching is required. Retrofit projects that reuse existing poles can be completed in 1–2 days."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Parking Lot Lighting in Bakersfield, CA: Costs, Title 24 Rules & PG&E Rebates | Echelon Lighting"
+  description="Parking lot lighting in Bakersfield, CA costs $2,500–$5,500 per pole. Title 24 requirements, PG&E rebates, dark sky compliance, and heat-rated fixture specs."
+  schema={faqSchema}
+>
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a><span>/</span>
+      <a href="/blog/" class="hover:text-gray-700 no-underline">Blog</a><span>/</span>
+      <span class="text-gray-700">Parking Lot Lighting in Bakersfield, CA</span>
+    </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <article class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Parking Lot Lighting · Bakersfield, CA · April 2026 · 11 min read</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-4 leading-tight">Parking Lot Lighting in Bakersfield, CA: What Every Property Owner Needs to Know</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">Bakersfield is one of the hottest cities in California — literally. Summer temperatures routinely exceed 110°F, and even nighttime lows stay above 75°F for months at a stretch. That extreme heat is hard on parking lot lighting, and if your fixtures and drivers aren't rated for it, you'll be replacing them far sooner than the manufacturer's warranty suggests. Combined with California's Title 24 energy code and Kern County's dark sky provisions, parking lot lighting in Bakersfield requires more planning than most property owners expect.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">This guide covers real costs for Bakersfield parking lot lighting projects in 2026, the Title 24 lighting power density rules you need to comply with, PG&E rebate programs that can reduce your upfront investment, and the fixture specifications that actually hold up in the San Joaquin Valley's brutal climate.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Why Bakersfield Parking Lots Need Heat-Rated Fixtures</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Most LED area lights are rated for 40°C (104°F) ambient temperature operation. That might work in Portland or Minneapolis, but Bakersfield regularly exceeds that threshold from June through September. An LED fixture operating above its rated ambient temperature experiences accelerated lumen depreciation — the light output drops faster than the manufacturer projected — and driver components degrade, leading to premature failure.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Ambient Temperature Ratings Matter</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">For Bakersfield, specify parking lot fixtures with a minimum 50°C (122°F) ambient temperature rating. Better yet, look for 55°C-rated fixtures if they're available from your preferred manufacturer. The cost difference between a 40°C and 50°C rated fixture is typically $30–$80 per unit — trivial compared to the cost of replacing a failed fixture at the top of a 30-foot pole two years into its supposed 10-year life.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Driver selection matters even more than the fixture housing. The driver is the first component to fail under thermal stress. Look for drivers from Inventronics, Meanwell (HLG-series), or Philips Advance that are explicitly rated for high-ambient applications. The spec sheet should list both the rated ambient temperature and the maximum case temperature (Tc point). If the Tc temperature is less than 80°C with a 50°C ambient, that driver won't last in Bakersfield.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">UV Degradation on Lenses and Housings</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Bakersfield receives over 270 sunny days per year with extreme UV exposure. Polycarbonate lenses — common on cheaper fixtures — yellow and lose transmittance after 3–5 years of direct sun exposure. The light output drops 15–25% even though the LEDs themselves are fine. Specify fixtures with tempered glass lenses for any parking lot application in the San Joaquin Valley. Glass doesn't degrade under UV, and it's also more resistant to the windblown grit and dust that Bakersfield is known for.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Parking Lot Lighting Costs in Bakersfield</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">All costs below reflect 2026 pricing in the Kern County market, including equipment, labor, permits, and standard controls. Work performed by a California C-10 licensed electrical contractor.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">New Parking Lot Installation</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>$2,500–$5,500 per pole</strong> for a complete installation including a 20–30 foot round or square aluminum pole, LED area light (150W–300W), concrete base, conduit, wiring, and photocell. A standard 50-space commercial parking lot typically requires 8–12 poles and runs $25,000–$60,000 total. Larger retail lots with 200+ spaces and decorative poles can exceed $150,000.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">The biggest cost variable is trenching. If your lot is already paved and you need to saw-cut, trench, and repave, add $25–$40 per linear foot. An alternative for retrofit situations is boring — directional drilling under the existing pavement — which costs $15–$25 per foot and avoids surface damage. For new construction where electrical is installed before paving, trenching costs drop to $8–$15 per foot.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">LED Retrofit (Replacing HID on Existing Poles)</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>$800–$2,000 per fixture</strong> when your existing poles, bases, and wiring are in good condition. This includes the LED area light, mounting arm adapter (if needed), photocell, and labor. A crew of two electricians with a bucket truck can swap 8–12 fixtures per day, making this one of the fastest-ROI lighting projects available.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Energy savings from an HID-to-LED conversion are substantial. A 400W metal halide fixture replaced by a 150W LED area light saves approximately 1,200 kWh per year at typical dusk-to-dawn operating hours. At Bakersfield's current PG&E commercial rate of roughly $0.22/kWh, that's $264 per fixture per year in electricity savings. A 12-pole lot saves over $3,000 annually — meaning a retrofit project typically pays for itself in 3–4 years before rebates.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">California Title 24 Requirements for Parking Lot Lighting</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California's Title 24 Energy Code (Part 6, 2022 Building Energy Efficiency Standards) sets strict requirements for outdoor lighting that directly affect every <a href="/commercial-lighting-bakersfield/" class="text-blue-700 hover:text-blue-900">Bakersfield commercial lighting project</a>. Here's what you need to know:</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Lighting Power Density (LPD) Limits</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Uncovered parking areas are capped at <strong>0.04 watts per square foot</strong> of total hardscape area. That sounds restrictive, and it is — you need fixtures producing 130+ lumens per watt to meet light level requirements within this power budget. A 50,000 sq ft parking lot is limited to 2,000 watts total, which means you're specifying high-efficacy LED fixtures at 150W–200W, not 300W+.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Covered parking structures have a separate LPD limit of 0.30 W/sq ft for the parking area and 0.15 W/sq ft for ramps and transitions. These are easier to meet but still require LED fixtures — fluorescent or HID won't make it.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Mandatory Controls</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Title 24 Section 130.2 requires outdoor lighting controls on all commercial parking lots. The minimum requirements include automatic scheduling controls (astronomical time clock or photocell), automatic dimming to 40% during unoccupied periods between midnight and 6 AM, and motion-sensing capability that returns lights to full output when activity is detected. Most modern LED area lights have these controls built into the fixture as standard equipment, but verify before you order — older or budget fixtures may lack the dimming and motion-sensing capability.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Dark Sky and Light Trespass</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Kern County's zoning ordinance includes outdoor lighting provisions that align with International Dark-Sky Association (IDA) guidelines. All new parking lot fixtures in Bakersfield must be full-cutoff design — zero light emitted above the horizontal plane. The backlight-uplight-glare (BUG) rating should be U0 for uplight and G2 or lower for glare. This eliminates sky glow and minimizes light trespass onto neighboring properties, which is especially important for commercial lots adjacent to residential areas in neighborhoods like Southwest Bakersfield, Oleander-Sunset, and the California Avenue corridor.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">PG&E Rebates for Bakersfield Parking Lot Lighting</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Pacific Gas & Electric (PG&E) serves the Bakersfield area and offers commercial outdoor lighting rebates through their energy efficiency programs. The programs change periodically, but here's what's available as of early 2026:</p>
+
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-6">
+          <h4 class="text-sm font-bold mb-3">Prescriptive Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">LED area light replacing 250W HID: <strong>$75–$125/fixture</strong></p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">LED area light replacing 400W HID: <strong>$100–$200/fixture</strong></p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">LED wall pack replacing HID: <strong>$40–$75/fixture</strong></p>
+          <p class="text-xs text-gray-600 leading-relaxed">Outdoor occupancy sensors: <strong>$25–$50/sensor</strong></p>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-6">
+          <h4 class="text-sm font-bold mb-3">Custom Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">Rate: <strong>$0.08–$0.12 per annual kWh saved</strong></p>
+          <p class="text-xs text-gray-600 leading-relaxed mb-2">Example: A 12-pole parking lot saving 14,400 kWh/year earns <strong>$1,150–$1,730</strong> in custom rebates</p>
+          <p class="text-xs text-gray-600 leading-relaxed">Custom pathway requires pre-installation energy analysis and post-installation verification. We handle all documentation.</p>
+        </div>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6"><strong>Important:</strong> PG&E requires all rebate applications to be submitted and approved before installation begins. Retrofit first, apply later, and the rebate is void. We submit applications during the design phase so approvals are in hand before material arrives on site.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Bakersfield Permitting for Parking Lot Lighting</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The City of Bakersfield Building Division requires electrical permits for all commercial parking lot lighting installations. California law requires a C-10 Electrical Contractor license for this type of work — no exceptions, regardless of project size.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">For new parking lot installations, a <a href="/blog/how-to-read-commercial-lighting-schedule/" class="text-blue-700 hover:text-blue-900">complete lighting plan</a> showing pole locations, fixture specifications, photometric calculations, and Title 24 compliance documentation must be submitted for plan check. Processing time is typically 10–15 business days. Simpler retrofit projects (swapping fixtures on existing poles) usually qualify for over-the-counter permits issued the same day.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">If the parking lot is in an unincorporated area of Kern County, the County Building Department handles permitting instead of the City. Processing times are similar, though the County may have additional dark sky requirements depending on the specific zone.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Fixture Selection for Bakersfield Parking Lots</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Based on Bakersfield's climate, code requirements, and typical lot configurations, here's what we recommend:</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Small to Mid-Size Lots (Under 100 Spaces)</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">150W LED area lights with Type III or Type V distribution on 25-foot poles. At this mounting height with 60–80 foot pole spacing, a 150W fixture producing 22,000+ lumens delivers 1.0+ foot-candles across the parking surface with good uniformity. Look for fixtures with tool-less wiring compartments — your electricians will thank you when they're working in the bucket truck at 6 AM before the heat kicks in.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Large Commercial and Retail Lots (100+ Spaces)</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">200W–300W LED area lights on 30–35 foot poles. Larger lots benefit from fewer, taller poles with higher-output fixtures. The wider spacing reduces both installation cost and ongoing maintenance touchpoints. For retail properties along Ming Avenue, Rosedale Highway, and the Valley Plaza area, decorative pole options are available that meet architectural review requirements while still using commercial-grade LED fixtures.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Security-Critical Properties</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">For properties requiring enhanced security lighting — storage facilities, vehicle dealerships, distribution yards — we spec fixtures at 2.0–5.0 foot-candles, well above the minimum 0.5 foot-candle threshold. Add continuous recording-quality illumination for camera systems, which typically requires 3.0+ foot-candles with high color rendering (CRI 70+). These higher light levels push LPD limits under Title 24, so fixture efficacy becomes critical — 150+ lumens per watt minimum.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Maintenance Considerations in Bakersfield</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Bakersfield's environment creates specific maintenance challenges that affect long-term ownership cost:</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Dust and agricultural particulates:</strong> The San Joaquin Valley is one of the dustiest regions in California. Fixture lenses accumulate a layer of grime that reduces light output by 10–20% within 6–12 months. Tempered glass lenses are easier to clean and resist scratching from abrasive dust better than polycarbonate. We recommend annual fixture cleaning as part of a basic maintenance program — a bucket truck crew can clean and inspect a 12-pole lot in half a day.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Ground-level ozone:</strong> Bakersfield frequently ranks among the worst US cities for ozone levels. Ozone degrades rubber gaskets and seals on fixture housings, eventually compromising the IP65/IP66 rating and allowing moisture infiltration. Specify fixtures with silicone gaskets (not rubber) and marine-grade powder-coat finishes for maximum longevity.</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6"><strong>Pole base corrosion:</strong> Kern County's soil chemistry — particularly in the southwest and southern parts of Bakersfield — can be corrosive to galvanized steel. For direct-burial poles, specify hot-dip galvanized steel with a minimum 3.9 oz/sq ft zinc coating per ASTM A123. For anchor-base installations, use stainless steel anchor bolts and verify the concrete base extends at least 6 inches above grade to keep the steel-to-concrete interface above soil contact.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Project Timeline for Bakersfield Parking Lot Lighting</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Week 1:</strong> Site survey, photometric design, fixture specification, PG&E rebate application, and Title 24 compliance documentation</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Weeks 2–3:</strong> Permit submission to City of Bakersfield Building Division, pole and fixture procurement</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Weeks 3–4:</strong> Plan check approval (10–15 business days typical), PG&E rebate pre-approval</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Weeks 4–5:</strong> Equipment delivery, concrete base installation (if new poles)</p>
+        <p class="text-sm text-gray-600 leading-relaxed mb-6"><strong>Weeks 5–7:</strong> Pole setting, wiring, fixture installation, testing, and final inspection</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-8">Total timeline from first call to lights-on: <strong>5–7 weeks</strong> for a standard new installation. Retrofit projects using existing poles can be completed in as little as <strong>1–2 weeks</strong> including permitting. We schedule installations for early morning hours during summer months to protect crew safety in Bakersfield's extreme heat.</p>
+
+        <!-- FAQ Section -->
+        <h2 class="text-2xl font-bold tracking-tight mb-4">Frequently Asked Questions</h2>
+        <div class="mb-8">
+          <div class="border-b border-gray-100 py-4">
+            <h3 class="text-base font-bold mb-2">How much does parking lot lighting cost in Bakersfield, CA?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">New parking lot lighting in Bakersfield costs $2,500 to $5,500 per pole for complete installations including LED area lights, aluminum poles, bases, and wiring. A 50-space lot runs $25,000–$60,000 total. LED retrofits on existing poles cost $800–$2,000 per fixture. PG&E rebates can offset 10–20% of project costs.</p>
+          </div>
+          <div class="border-b border-gray-100 py-4">
+            <h3 class="text-base font-bold mb-2">What light levels does Bakersfield require for commercial parking lots?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Bakersfield follows Title 24 and IES RP-20 standards. Minimum maintained illuminance is 0.5 foot-candles for open lots and 1.0 foot-candle for pedestrian areas. Title 24 caps lighting power density at 0.04 W/sq ft for uncovered lots, requiring high-efficacy LED fixtures rated at 130+ lumens per watt.</p>
+          </div>
+          <div class="border-b border-gray-100 py-4">
+            <h3 class="text-base font-bold mb-2">Does Bakersfield require permits for parking lot lighting?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Yes. The City of Bakersfield Building Division requires electrical permits. New installations need full plan check (10–15 business days). Retrofit projects on existing poles often qualify for over-the-counter permits. A California C-10 Electrical Contractor license is required for all commercial parking lot electrical work.</p>
+          </div>
+          <div class="border-b border-gray-100 py-4">
+            <h3 class="text-base font-bold mb-2">Are there utility rebates for LED parking lot lights in Bakersfield?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Yes. PG&E offers prescriptive rebates of $75–$200 per fixture for LED area lights replacing HID, plus custom rebates of $0.08–$0.12 per kWh saved annually. Applications must be submitted before installation begins. Echelon handles the complete rebate process as part of every project.</p>
+          </div>
+          <div class="py-4">
+            <h3 class="text-base font-bold mb-2">How long does a parking lot lighting project take in Bakersfield?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">New installations take 5–7 weeks from design to energization, including permitting and procurement. LED retrofits on existing poles can be completed in 1–2 weeks. Summer installations are scheduled for early morning hours to protect crew safety in Bakersfield's extreme heat conditions.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gray-950 text-white rounded-2xl p-8 text-center">
+          <h2 class="text-xl font-bold mb-3">Get a Free Parking Lot Lighting Assessment in Bakersfield</h2>
+          <p class="text-sm text-gray-400 max-w-lg mx-auto mb-5">We'll survey your parking lot, run a photometric analysis to determine optimal pole placement, verify Title 24 compliance, and prepare the PG&E rebate application — all before you commit to anything.</p>
+          <button onclick="openRFQ('','','Bakersfield CA — Parking Lot Lighting Assessment')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+          <p class="text-xs text-gray-500 mt-3">Or email: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+        </div>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-8 space-y-6">
+          <div class="bg-gray-50 rounded-xl p-5">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Quick Facts</h3>
+            <div class="space-y-3">
+              <div><p class="text-xs text-gray-400">New Install Cost</p><p class="text-sm font-bold">$2,500–$5,500/pole</p></div>
+              <div><p class="text-xs text-gray-400">Retrofit Cost</p><p class="text-sm font-bold">$800–$2,000/fixture</p></div>
+              <div><p class="text-xs text-gray-400">Energy Savings</p><p class="text-sm font-bold">50–65%</p></div>
+              <div><p class="text-xs text-gray-400">Payback Period</p><p class="text-sm font-bold">3–4 years</p></div>
+              <div><p class="text-xs text-gray-400">Utility</p><p class="text-sm font-bold">PG&E</p></div>
+              <div><p class="text-xs text-gray-400">Title 24 LPD</p><p class="text-sm font-bold">0.04 W/sq ft</p></div>
+            </div>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-5">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">Related</h3>
+            <div class="space-y-2">
+              <a href="/commercial-lighting-bakersfield/" class="block text-xs text-gray-600 hover:text-blue-700 no-underline">Commercial Lighting in Bakersfield →</a>
+              <a href="/blog/commercial-lighting-installation-cost-arlington-tx/" class="block text-xs text-gray-600 hover:text-blue-700 no-underline">Lighting Costs in Arlington, TX →</a>
+              <a href="/blog/commercial-lighting-installation-cost-tampa-fl/" class="block text-xs text-gray-600 hover:text-blue-700 no-underline">Lighting Costs in Tampa, FL →</a>
+              <a href="/blog/warehouse-lighting-aurora-co/" class="block text-xs text-gray-600 hover:text-blue-700 no-underline">Warehouse Lighting in Aurora, CO →</a>
+              <a href="/blog/how-to-read-commercial-lighting-schedule/" class="block text-xs text-gray-600 hover:text-blue-700 no-underline">How to Read a Lighting Schedule →</a>
+              <a href="/commercial-lighting-tampa/" class="block text-xs text-gray-600 hover:text-blue-700 no-underline">Commercial Lighting in Tampa →</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>
