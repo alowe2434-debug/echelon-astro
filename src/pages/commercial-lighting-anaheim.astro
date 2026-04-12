@@ -1,0 +1,209 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Echelon Lighting — Anaheim, CA",
+      "description": "Commercial lighting installation, LED retrofits, and electrical contracting services in Anaheim, CA.",
+      "url": "https://echelonlighting.com/commercial-lighting-anaheim/",
+      "areaServed": { "@type": "City", "name": "Anaheim", "containedInPlace": { "@type": "State", "name": "California" } },
+      "parentOrganization": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "email": "quotes@echelonlighting.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Commercial Lighting Installation",
+      "provider": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "areaServed": { "@type": "City", "name": "Anaheim", "containedInPlace": { "@type": "State", "name": "California" } },
+      "description": "Full-service commercial lighting installation, LED retrofits, parking lot lighting, warehouse high-bay upgrades, Title 24 compliance, and SCE rebate management in Anaheim, CA."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What commercial lighting services does Echelon provide in Anaheim, CA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot and exterior lighting, office lighting upgrades, and lighting controls installation throughout Anaheim and Orange County. All work is performed by C-10 licensed electrical contractors, permitted through the City of Anaheim, and compliant with California Title 24 energy standards." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does California Title 24 apply to commercial lighting projects in Anaheim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. All commercial lighting installations and alterations in Anaheim must comply with California's 2022 Title 24 Building Energy Efficiency Standards. This requires meeting lighting power density (LPD) limits by space type, installing occupancy sensors or multi-level switching, and implementing daylight-responsive controls in perimeter zones. Echelon prepares all required CF1R-LTG compliance documentation as part of every project." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there utility rebates for commercial LED upgrades in Anaheim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Southern California Edison (SCE) offers prescriptive rebates of $30–$100 per fixture for qualifying LED upgrades, and custom incentives of $0.09–$0.15 per annual kWh saved for larger projects. Some Anaheim properties are served by Anaheim Public Utilities (AUP) rather than SCE — AUP has its own rebate programs. Echelon identifies your utility, manages the pre-approval application, and handles all rebate paperwork at no additional cost." }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas near Anaheim does Echelon Lighting serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon serves all of Anaheim plus surrounding Orange County communities including Garden Grove, Buena Park, Fullerton, Orange, Placentia, Yorba Linda, Tustin, Santa Ana, and the greater Los Angeles basin. Our C-10 license covers all of California." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does California's seismic code affect commercial lighting in Anaheim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Anaheim is in Seismic Design Category D, requiring suspended ceiling systems and pendant-mounted fixtures to meet California Building Code Chapter 16 seismic bracing requirements. Overhead lighting in commercial spaces must be independently braced with seismic wire at 4-foot intervals. Pole-mounted exterior fixtures must be specified and engineered to resist horizontal seismic loads. Echelon designs all installations to meet CBC seismic requirements as a baseline." }
+        }
+      ]
+    }
+  ]
+};
+---
+<Base
+  title="Commercial Lighting Installation in Anaheim, CA | Echelon Lighting"
+  description="Commercial lighting installation and LED retrofit services in Anaheim, CA. C-10 licensed contractor serving warehouses, offices, parking lots, and retail. Title 24 compliance and SCE rebates managed."
+  schema={schema}
+>
+  <!-- Hero -->
+  <div class="bg-gray-950 text-white py-20">
+    <div class="section">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Anaheim, CA · Commercial Lighting</div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">Commercial Lighting Installation in Anaheim, CA</h1>
+      <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">C-10 licensed electrical contractors specializing in commercial LED lighting installation, retrofits, and Title 24-compliant energy upgrades for warehouses, offices, retail, hospitality, and parking facilities throughout Anaheim and Orange County.</p>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openRFQ('','','Anaheim CA — Free Lighting Audit')" class="bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Get a Free Lighting Audit in Anaheim</button>
+        <a href="mailto:quotes@echelonlighting.com" class="bg-white/10 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-white/20 no-underline">quotes@echelonlighting.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section py-16">
+    <h2 class="text-3xl font-bold tracking-tight mb-10">Commercial Lighting Services in Anaheim</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Warehouse & Industrial Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Anaheim's industrial corridors — along SR-57, SR-91, and the La Palma Avenue industrial zone — contain hundreds of warehouses and flex-industrial buildings, most with aging HPS or metal halide high-bay systems. We install and retrofit LED high-bay lighting using 150W–240W fixtures that replace 400W–1000W HID lamps, cutting energy consumption 50–70% while meeting California Title 24's 0.66 W/sq ft warehouse LPD limit. Every installation includes occupancy sensors and bi-level switching to meet mandatory code controls requirements.</p>
+        <a href="/products/high-bay/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View warehouse lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Office & Professional Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">From the Platinum Triangle's Class A office towers near Angel Stadium to the office campuses along Katella Avenue and the mixed-use developments at ARTIC, Anaheim's office market demands fixtures and controls that satisfy Title 24's 0.75 W/sq ft LPD cap while delivering comfortable, productive work environments. Our packages include recessed LED troffers, suspended linear systems, architectural downlights, and DALI dimming with daylight harvesting — meeting the mandatory perimeter daylighting controls requirements that apply to spaces within 15 feet of exterior glazing.</p>
+        <a href="/applications/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View office lighting solutions →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Parking Lot & Exterior Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Anaheim's Resort District, Platinum Triangle, and commercial corridors require exterior lighting that balances security, visibility, and dark-sky compliance. The City enforces full-cutoff fixture requirements near residential zones, and the 2022 Title 24 mandates that all outdoor lighting be controlled by photosensors and have nighttime reduction capability. We install LED area lights, full-cutoff wall packs, bollard lighting, and canopy fixtures — all meeting Anaheim's BUG rating requirements (B0-U0-G0 or B1-U0-G1) and seismically braced for Southern California's Seismic Design Category D.</p>
+        <a href="/products/exterior/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View exterior lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">LED Retrofit & Energy Upgrades</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">SCE commercial electricity rates in Orange County currently run $0.22–$0.30 per kWh depending on time-of-use tier — and have increased over 20% in the past three years. A mid-sized Anaheim warehouse still running 400W metal halide fixtures is paying 2–3x what it should for lighting. Our retrofit program replaces fixture internals in-place — same housing, new LED technology — at 30–50% less than full replacement. We handle the complete SCE or Anaheim Public Utilities rebate application process, including pre-approval, post-installation documentation, and rebate check follow-up.</p>
+        <a href="/compliance/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View energy compliance & rebate info →</a>
+      </div>
+
+    </div>
+
+    <!-- Anaheim-Specific Content -->
+    <h2 class="text-3xl font-bold tracking-tight mb-6">Why Anaheim Commercial Properties Need Specialized Lighting Expertise</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">Title 24 Compliance and Permit Requirements</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California's 2022 Title 24 Part 6 standards apply to all commercial lighting alterations in Anaheim. Any project affecting 10% or more of a space's connected lighting load triggers full compliance review. The City of Anaheim's Building Division processes electrical permits through their ePlans online portal, with standard commercial permits taking 5–10 business days. Projects in the Platinum Triangle, Resort District, or other areas subject to Specific Plan overlay may require concurrent Planning review, adding 2–4 weeks.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">All commercial lighting projects require a Certificate of Compliance (CF1R-LTG) documenting fixture schedules, LPD calculations, and controls compliance, signed by a C-10 licensed contractor. Echelon prepares this documentation on every project as a standard deliverable — it's required for permit issuance and the final inspection.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Seismic Bracing and Climate Considerations</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Anaheim sits in Seismic Design Category D. The California Building Code requires all suspended ceiling systems and pendant-mounted fixtures to be independently seismically braced with approved wire at 4-foot maximum intervals. Fluorescent and LED troffer retrofits using existing T-bar grids must verify the grid is properly secured — many older Anaheim commercial buildings have grids installed before current CBC seismic standards took effect.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">For exterior applications, Anaheim's climate averages 284 sunny days per year with summer temperatures regularly reaching 95–105°F inland. LED drivers must be rated for 50°C minimum ambient, and exterior housings require IP65 ratings. UV-stabilized polycarbonate lenses are mandatory for Southern California sun exposure — standard acrylic lenses yellow and fail within 3–5 years outdoors in this climate.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Anaheim's Key Commercial Zones</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Platinum Triangle</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Anaheim's high-density urban district surrounding Angel Stadium and the Honda Center is adding Class A office, hotel, and residential towers. Projects here face Platinum Triangle Master Land Use Plan design standards for exterior lighting — dark-sky compliance, decorative fixture requirements at street level, and coordination with public realm lighting. Interior lighting must meet the 0.75 W/sq ft office LPD while delivering architectural quality.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Resort District</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The Disneyland Resort Specific Plan area encompasses hundreds of hotels, restaurants, and retail spaces. Exterior lighting is tightly regulated — full-cutoff fixtures, maximum mounting heights, and controlled light levels at property lines. Hospitality interiors require CRI 90+ fixtures for restaurant and lobby applications. JA8-certified fixtures are required for guest room occupancies per Title 24.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">East Anaheim / SR-91 Industrial</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The La Palma Avenue and La Jolla Street industrial zone along the 91 freeway corridor is the city's largest concentration of warehouse and flex-industrial buildings. Most were built between 1970–1995 with original HPS or metal halide systems that are well past their useful life. LED high-bay retrofits here are cost-effective, straightforward projects with 2–3 year payback on energy savings alone before SCE rebates.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Canyon Industrial Park / Anaheim Hills</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The SR-91/241 interchange area hosts manufacturing and office-industrial flex. The hillside overlay zone here restricts pole heights and requires additional design review for any exterior lighting that could affect the ridgeline. LED fixtures with tightly controlled beam optics are required to minimize spill light toward the surrounding residential areas.</p>
+      </div>
+    </div>
+
+    <!-- SCE / AUP Rebates Section -->
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-16">
+      <h3 class="text-xl font-bold mb-4">SCE and Anaheim Public Utilities Rebates</h3>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">Anaheim commercial properties are served by either Southern California Edison (SCE) or the city-owned Anaheim Public Utilities (AUP). Both offer rebates for qualifying LED upgrades, but the programs differ. Confirm your utility before applying — your electric bill header will identify the provider.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-sm font-bold mb-2">SCE Business Energy Solutions</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Interior LED (replacing fluorescent): $30–$60/fixture. LED high-bay (replacing HID 400W+): $75–$100/fixture. Exterior LED (replacing HID): $50–$90/fixture. Custom incentives for large projects: $0.09–$0.15 per annual kWh saved. Pre-approval required before installation begins.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold mb-2">Anaheim Public Utilities (AUP)</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">AUP offers the Commercial Energy Efficiency Rebate Program with custom incentives based on energy savings calculations. AUP incentive rates are often higher per fixture than SCE for smaller commercial customers. Applications submitted through the AUP Customer Care portal. Echelon manages both SCE and AUP applications.</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">All rebate applications must be pre-approved before installation. DLC-listed fixtures are required for both programs. We manage the complete application process at no additional cost to you.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-950 text-white rounded-2xl p-10 mb-16 text-center">
+      <h2 class="text-2xl font-bold mb-3">Get a Free Lighting Audit in Anaheim</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto mb-6">We'll survey your property, run the Title 24 calculations, identify your SCE or AUP rebate eligibility, and give you an exact installed price — all before you commit to anything. Most Anaheim commercial properties see 50–65% energy reduction with payback under 36 months.</p>
+      <button onclick="openRFQ('','','Anaheim CA — Free Lighting Audit')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+      <p class="text-xs text-gray-500 mt-4">Or email us directly: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Frequently Asked Questions: Commercial Lighting in Anaheim, CA</h2>
+    <div class="max-w-2xl mb-16">
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What commercial lighting services does Echelon provide in Anaheim, CA?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot and exterior lighting, office lighting, hospitality and retail lighting, and lighting controls installation throughout Anaheim and Orange County. All work is performed by C-10 licensed electrical contractors, permitted through the City of Anaheim, and Title 24-compliant.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does California Title 24 apply to commercial lighting projects in Anaheim?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. All commercial lighting in Anaheim must comply with the 2022 Title 24 Building Energy Efficiency Standards — including LPD limits by space type, mandatory occupancy sensors, and daylight-responsive controls in perimeter zones. Echelon prepares the CF1R-LTG compliance documentation required for permit and inspection on every project.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Are there rebates for commercial LED upgrades in Anaheim?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes — from either SCE or Anaheim Public Utilities depending on who serves your meter. SCE prescriptive rebates run $30–$100 per fixture; custom incentives for larger projects pay $0.09–$0.15 per annual kWh saved. Echelon manages the entire rebate application process at no additional cost.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">How does Anaheim's seismic code affect commercial lighting?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Anaheim is in Seismic Design Category D. All suspended ceiling fixtures must be independently braced with seismic wire per CBC Chapter 16. Pole-mounted exterior fixtures require engineering for seismic lateral loads. Echelon designs all installations to meet CBC seismic requirements as standard practice.</p>
+      </div>
+      <div class="py-5">
+        <h3 class="text-base font-bold mb-2">What areas near Anaheim does Echelon Lighting serve?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon serves all of Anaheim and surrounding Orange County cities including Garden Grove, Buena Park, Fullerton, Orange, Placentia, Yorba Linda, Tustin, Santa Ana, and the broader Los Angeles metro area. Our C-10 license covers all of California.</p>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gray-50 rounded-xl p-6">
+      <h3 class="text-sm font-bold mb-4">Explore Our Commercial Lighting Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/blog/commercial-lighting-installation-anaheim-ca/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting Installation Costs in Anaheim →</a>
+        <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse & High-Bay LED Fixtures →</a>
+        <a href="/products/exterior/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Exterior & Parking Lot Lighting →</a>
+        <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Title 24, Energy Codes & Rebates →</a>
+        <a href="/commercial-lighting-bakersfield/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Bakersfield, CA →</a>
+        <a href="/commercial-lighting-aurora/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Aurora, CO →</a>
+        <a href="/commercial-lighting-arlington/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Arlington, TX →</a>
+        <a href="/commercial-lighting-tampa/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Tampa, FL →</a>
+        <a href="/blog/parking-lot-lighting-bakersfield-ca/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Parking Lot Lighting in Bakersfield, CA →</a>
+        <a href="/blog/how-to-read-commercial-lighting-schedule/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">How to Read a Commercial Lighting Schedule →</a>
+      </div>
+    </div>
+  </div>
+</Base>
