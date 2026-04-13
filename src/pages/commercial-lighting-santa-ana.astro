@@ -1,0 +1,209 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Echelon Lighting — Santa Ana, CA",
+      "description": "Commercial lighting installation, LED retrofits, and C-10 licensed electrical contracting services in Santa Ana, CA and throughout Orange County.",
+      "url": "https://echelonlighting.com/commercial-lighting-santa-ana/",
+      "areaServed": { "@type": "City", "name": "Santa Ana", "containedInPlace": { "@type": "State", "name": "California" } },
+      "parentOrganization": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "email": "quotes@echelonlighting.com",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Commercial Lighting Installation",
+      "provider": { "@type": "Organization", "name": "Echelon Lighting", "url": "https://echelonlighting.com" },
+      "areaServed": { "@type": "City", "name": "Santa Ana", "containedInPlace": { "@type": "State", "name": "California" } },
+      "description": "Full-service commercial lighting installation, LED retrofits, warehouse high-bay upgrades, parking lot lighting, Title 24 compliance documentation, and SCE rebate management in Santa Ana, CA."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What commercial lighting services does Echelon provide in Santa Ana, CA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon Lighting provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot and exterior lighting, office lighting upgrades, retail and hospitality lighting, and lighting controls throughout Santa Ana and Orange County. All work is performed by C-10 licensed electrical contractors, permitted through the City of Santa Ana, and fully compliant with California Title 24 energy standards." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does California Title 24 apply to commercial lighting projects in Santa Ana?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. All commercial lighting installations and alterations in Santa Ana must comply with California's 2022 Title 24 Building Energy Efficiency Standards. This requires meeting lighting power density (LPD) limits by space type (0.66 W/sq ft for warehouses, 0.75 W/sq ft for offices, 1.05 W/sq ft for retail), installing occupancy sensors or multi-level switching, and implementing daylight-responsive controls in perimeter zones within 15 feet of exterior glazing. Echelon prepares all required CF1R-LTG compliance documentation on every project." }
+        },
+        {
+          "@type": "Question",
+          "name": "What SCE rebates are available for commercial LED upgrades in Santa Ana?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Southern California Edison (SCE) serves most of Santa Ana. SCE's Business Energy Solutions program offers prescriptive rebates of $30–$60 per fixture for interior LED upgrades, $75–$100 per fixture for high-bay LED conversions replacing HID, and $50–$90 per fixture for exterior LED area lights. Custom incentives for larger projects pay $0.09–$0.15 per annual kWh saved. Pre-approval is required before installation begins. Echelon manages the complete SCE rebate application process at no additional cost." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Echelon handle permits for commercial lighting in Santa Ana?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Echelon is a C-10 licensed electrical contractor that pulls all required permits through the City of Santa Ana Building Division's ePlans online portal. Standard commercial lighting permits take 5–10 business days. Projects in the Downtown Specific Plan area, Station District Transit Corridor, or involving historic structures may require Planning review, adding 2–4 weeks to the permit timeline." }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas near Santa Ana does Echelon Lighting serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Echelon serves all of Santa Ana and surrounding Orange County communities including Anaheim, Garden Grove, Tustin, Orange, Irvine, Costa Mesa, Fountain Valley, Westminster, and the greater Los Angeles basin. Our C-10 license covers all of California." }
+        }
+      ]
+    }
+  ]
+};
+---
+<Base
+  title="Commercial Lighting Installation in Santa Ana, CA | Echelon Lighting"
+  description="Commercial lighting installation and LED retrofit services in Santa Ana, CA. C-10 licensed contractor serving warehouses, offices, parking lots, and retail. Title 24 compliance and SCE rebates managed."
+  schema={schema}
+>
+  <!-- Hero -->
+  <div class="bg-gray-950 text-white py-20">
+    <div class="section">
+      <div class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Santa Ana, CA · Commercial Lighting</div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight max-w-2xl">Commercial Lighting Installation in Santa Ana, CA</h1>
+      <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">C-10 licensed electrical contractors specializing in commercial LED lighting installation, retrofits, and Title 24-compliant energy upgrades for warehouses, offices, retail, parking facilities, and industrial buildings throughout Santa Ana and Orange County.</p>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="openRFQ('','','Santa Ana CA — Free Lighting Audit')" class="bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Get a Free Lighting Audit in Santa Ana</button>
+        <a href="mailto:quotes@echelonlighting.com" class="bg-white/10 text-white px-6 py-3 rounded-lg text-sm font-bold hover:bg-white/20 no-underline">quotes@echelonlighting.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section py-16">
+    <h2 class="text-3xl font-bold tracking-tight mb-10">Commercial Lighting Services in Santa Ana</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Warehouse & Industrial Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's industrial base lines the 405 and 55 freeway corridors — flex-industrial buildings, light manufacturing, and distribution centers, most running 25–35-year-old HPS or metal halide high-bay systems that are dramatically inefficient by current LED standards. We install and retrofit LED high-bay lighting using 150W–240W UFO and linear fixtures that replace 400W–1,000W HID lamps, cutting energy consumption 55–70% while meeting California Title 24's 0.66 W/sq ft warehouse LPD limit. Every installation includes occupancy-based controls and bi-level switching to satisfy mandatory Title 24 requirements — and to capture the additional 20–30% energy reduction that controls provide beyond what LED fixtures alone achieve.</p>
+        <a href="/products/high-bay/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View warehouse lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Office & Professional Space Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's Civic Center district and the South Coast Metro office corridor house some of Orange County's most densely packed professional services buildings — government offices, legal practices, healthcare providers, and financial services firms in Class B and Class C office space that typically hasn't seen a lighting upgrade in 15–20 years. We deliver LED troffer retrofits, recessed downlights, linear suspended systems, and full DALI dimming controls — meeting Title 24's 0.75 W/sq ft office LPD limit while delivering the light quality that productive work environments require. Perimeter daylighting controls are integrated into every project as required by the 2022 code.</p>
+        <a href="/applications/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View office lighting solutions →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">Parking Lot & Exterior Lighting</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's commercial corridors — Bristol Street, 17th Street, Grand Avenue — and the industrial surface lots along the freeway corridors need exterior lighting that delivers security and visibility without creating light trespass into adjacent residential zones. The City enforces full-cutoff fixture requirements near residential areas, and the 2022 Title 24 mandates photosensor controls and nighttime power reduction capability on all outdoor lighting. We install LED area lights, full-cutoff wall packs, bollard lighting, and canopy fixtures — all meeting BUG rating requirements, seismically braced to CBC Seismic Design Category D standards, and engineered for Southern California's high-UV, high-heat exterior environment.</p>
+        <a href="/products/exterior/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View exterior lighting fixtures →</a>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-3">LED Retrofit & Energy Upgrades</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">SCE commercial electricity rates in Orange County run $0.22–$0.30 per kWh depending on time-of-use tier — among the highest commercial rates in the continental US. A Santa Ana warehouse still running 400W metal halide high-bays is spending 2–3x what it should on lighting. Our retrofit program evaluates each project on a full vs. partial replacement basis — the right answer depends on Title 24 threshold triggers, existing housing condition, SCE rebate eligibility, and project budget. We handle SCE pre-approval, post-installation documentation, and rebate check follow-up on every project at no additional charge.</p>
+        <a href="/compliance/" class="text-xs text-blue-700 font-bold hover:text-blue-900 no-underline">View energy compliance & rebate info →</a>
+      </div>
+
+    </div>
+
+    <!-- Santa Ana Specific Content -->
+    <h2 class="text-3xl font-bold tracking-tight mb-6">Why Santa Ana Commercial Properties Need Specialized Lighting Expertise</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h3 class="text-lg font-bold mb-3">Title 24 Compliance and Permit Requirements</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California's 2022 Title 24 Part 6 standards apply to all commercial lighting alterations in Santa Ana. Any project affecting 10% or more of a space's connected lighting load triggers full compliance review — LPD calculations, occupancy sensors, daylight-responsive controls in perimeter zones, and CF1R-LTG certificate of compliance documentation signed by a C-10 licensed contractor.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">The City of Santa Ana Building Division processes electrical permits through their ePlans online portal. Standard commercial interior lighting permits take 5–10 business days. Projects within the Downtown Specific Plan overlay, Station District Transit Corridor, or involving historic-designated structures require concurrent Planning review — add 2–4 weeks. All projects require a HERS third-party inspection for Title 24 compliance sign-off in addition to the standard building inspection.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-3">Seismic Requirements and Climate Considerations</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana is in Seismic Design Category D. The California Building Code requires all suspended ceiling systems and pendant-mounted fixtures to be independently seismically braced with approved wire at 4-foot maximum intervals per CBC Chapter 16. In Santa Ana's older commercial and industrial buildings — many built before current seismic standards — existing T-bar grids frequently need to be upgraded as part of a lighting retrofit. Budget $2–$5 per square foot of ceiling for seismic bracing work when upgrading fixtures in pre-2000 construction.</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Santa Ana's climate averages 282 sunny days per year with summer temperatures reaching 90–100°F regularly. LED drivers in unconditioned or semi-conditioned spaces — loading docks, covered walkways, non-HVAC warehouse sections — must be rated for 50°C minimum ambient. UV-stabilized polycarbonate lenses are required for outdoor fixtures; standard acrylic yellows and crazes within 3–5 years under Southern California's UV intensity.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4">Santa Ana's Key Commercial Zones</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Downtown Santa Ana & Station District</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Santa Ana's historic downtown is experiencing significant commercial investment — restaurant buildouts, creative office conversions, boutique retail in Craftsman-era buildings. The Downtown Specific Plan and Station District Transit Corridor overlay zones both add planning review requirements for exterior changes. Interior lighting renovations in historic structures may face additional design requirements to preserve character-defining features. Warm-dimming LED (2,700K–3,000K) is typically specified for the hospitality and restaurant buildouts driving the district's growth.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">Civic Center District</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The Civic Center area around City Hall hosts Orange County's densest concentration of government offices, legal firms, and professional services providers. Office lighting upgrades here typically involve 1980s–1990s Class B buildings with original 3-lamp T8 fluorescent systems. LED troffer retrofits in these buildings must account for existing grid condition (seismic bracing is often deficient) and comply with Title 24's perimeter daylighting requirements that apply to any space with exterior window exposure.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">405/55 Industrial Corridors</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">Santa Ana's industrial base along the 405 freeway and south of the 22 freeway is one of the densest concentrations of light manufacturing and warehouse space in Orange County. The majority of these buildings date from 1975–2000 and carry original HPS or metal halide high-bays that have far exceeded their design life. LED high-bay retrofits here are cost-effective with 2–3 year payback on energy savings alone — before SCE rebates of $75–$100 per fixture on qualifying HID-to-LED conversions.</p>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-5">
+        <h4 class="text-sm font-bold mb-2">South Coast Metro / MacArthur Corridor</h4>
+        <p class="text-xs text-gray-600 leading-relaxed">The South Coast Metro area along MacArthur Boulevard and the I-405/55 interchange is one of Orange County's primary Class A office concentrations. Office towers here are newer vintage (post-1990) with existing lighting controls infrastructure, but many are due for LED retrofit as T8 fluorescent systems approach end of useful life. Projects in this zone often involve DALI or BACnet-integrated lighting controls for building automation system compatibility — a meaningful specification upgrade versus basic on/off switching.</p>
+      </div>
+    </div>
+
+    <!-- SCE Rebates Section -->
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 mb-16">
+      <h3 class="text-xl font-bold mb-4">SCE Rebates for Santa Ana Commercial Properties</h3>
+      <p class="text-sm text-gray-600 leading-relaxed mb-4">Southern California Edison serves most of Santa Ana. SCE's Business Energy Solutions program provides two tracks: prescriptive rebates for standard upgrades, and custom incentives for larger projects calculated per kWh saved.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-sm font-bold mb-2">SCE Prescriptive Rebates</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">Interior LED troffers (replacing fluorescent): $30–$60 per fixture. LED high-bay (replacing 400W HID): $75 per fixture. LED high-bay (replacing 1,000W HID): $100 per fixture. Exterior LED area lights (replacing HID): $50–$90 per fixture. Occupancy and daylight sensors: $30–$75 each. DLC Premium listing required for all fixtures.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold mb-2">SCE Custom Incentives</h4>
+          <p class="text-xs text-gray-600 leading-relaxed">For larger projects with calculated energy savings, SCE pays $0.09–$0.15 per annual kWh saved. A 40,000 sq ft Santa Ana warehouse project saving 250,000 kWh/year can earn $22,500–$37,500 in SCE custom incentives. Pre-approval and M&V (measurement and verification) documentation required.</p>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">Pre-approval must be obtained before installation begins. Submitting after installation disqualifies the project from rebate eligibility. Echelon manages both prescriptive and custom SCE applications at no additional cost to you.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-950 text-white rounded-2xl p-10 mb-16 text-center">
+      <h2 class="text-2xl font-bold mb-3">Get a Free Lighting Audit in Santa Ana</h2>
+      <p class="text-sm text-gray-400 max-w-xl mx-auto mb-6">We'll survey your property, evaluate full vs. partial retrofit options, run Title 24 calculations, identify SCE rebate eligibility, and deliver an exact installed price — all before you commit to anything. Most Santa Ana commercial properties see 50–70% energy reduction after an LED conversion.</p>
+      <button onclick="openRFQ('','','Santa Ana CA — Free Lighting Audit')" class="bg-blue-700 text-white px-8 py-3.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Quote</button>
+      <p class="text-xs text-gray-500 mt-4">Or email us directly: <a href="mailto:quotes@echelonlighting.com" class="text-blue-400 hover:text-blue-300 no-underline">quotes@echelonlighting.com</a></p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Frequently Asked Questions: Commercial Lighting in Santa Ana, CA</h2>
+    <div class="max-w-2xl mb-16">
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What commercial lighting services does Echelon provide in Santa Ana?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon provides complete commercial lighting installation, LED retrofits, warehouse high-bay lighting, parking lot and exterior lighting, office lighting upgrades, retail and hospitality lighting, and lighting controls throughout Santa Ana and Orange County. All work is performed by C-10 licensed contractors, permitted through the City of Santa Ana, and Title 24-compliant.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does California Title 24 apply to commercial lighting projects in Santa Ana?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. All commercial lighting alterations in Santa Ana that affect 10% or more of a space's connected load must comply with 2022 Title 24 — including LPD limits, mandatory occupancy sensors, and daylight-responsive controls in perimeter zones. Echelon prepares all required CF1R-LTG compliance documentation on every project.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">What SCE rebates are available for commercial LED upgrades in Santa Ana?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">SCE prescriptive rebates run $30–$100 per fixture depending on fixture type (interior LED, high-bay, or exterior). Custom incentives for larger projects pay $0.09–$0.15 per annual kWh saved. Echelon manages the complete SCE rebate application process, including pre-approval, at no additional cost.</p>
+      </div>
+      <div class="border-b border-gray-100 py-5">
+        <h3 class="text-base font-bold mb-2">Does Echelon handle permits for commercial lighting in Santa Ana?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Yes. We pull all required permits through the City of Santa Ana Building Division's ePlans portal. Standard interior permits take 5–10 business days. Projects in the Downtown Specific Plan or Station District may require additional Planning review. All projects include coordination with the HERS inspector for Title 24 sign-off.</p>
+      </div>
+      <div class="py-5">
+        <h3 class="text-base font-bold mb-2">What areas near Santa Ana does Echelon Lighting serve?</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">Echelon serves all of Santa Ana and surrounding Orange County communities including Anaheim, Garden Grove, Tustin, Orange, Irvine, Costa Mesa, Fountain Valley, and Westminster. Our C-10 license covers all of California.</p>
+      </div>
+    </div>
+
+    <!-- Internal Links -->
+    <div class="bg-gray-50 rounded-xl p-6">
+      <h3 class="text-sm font-bold mb-4">Explore Our Commercial Lighting Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/blog/commercial-led-retrofit-costs-santa-ana-ca/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">LED Retrofit Costs in Santa Ana, CA: Full vs. Partial →</a>
+        <a href="/commercial-lighting-anaheim/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Anaheim, CA →</a>
+        <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Warehouse & High-Bay LED Fixtures →</a>
+        <a href="/products/exterior/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Exterior & Parking Lot Lighting →</a>
+        <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Title 24, Energy Codes & Rebates →</a>
+        <a href="/blog/commercial-lighting-installation-anaheim-ca/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Anaheim Commercial Lighting Cost Guide →</a>
+        <a href="/commercial-lighting-bakersfield/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Bakersfield, CA →</a>
+        <a href="/commercial-lighting-arlington/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Arlington, TX →</a>
+        <a href="/commercial-lighting-aurora/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Aurora, CO →</a>
+        <a href="/commercial-lighting-tampa/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Commercial Lighting in Tampa, FL →</a>
+      </div>
+    </div>
+  </div>
+</Base>

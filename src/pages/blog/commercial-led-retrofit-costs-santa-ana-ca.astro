@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a commercial LED retrofit cost in Santa Ana, CA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A commercial LED retrofit in Santa Ana typically runs $2–$6 per square foot for a lamp-and-driver swap, or $4–$10 per square foot for a full fixture replacement. A 15,000 sq ft warehouse retrofit averages $30,000–$75,000 installed before SCE rebates. SCE prescriptive rebates of $30–$100 per fixture typically reduce that cost by 15–25%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does California Title 24 require a full fixture replacement versus a retrofit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "California's 2022 Title 24 Part 6 triggers a full compliance review when a project alters 10% or more of a space's connected lighting load. A lamp-and-driver retrofit that stays within that threshold may be permitted as a maintenance item. Any project crossing that 10% threshold must meet current LPD limits, install occupancy sensors, and include daylight-responsive controls in perimeter zones. A licensed C-10 contractor should evaluate this threshold before scoping your project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Santa Ana require permits for commercial lighting projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The City of Santa Ana Building Division requires an electrical permit for commercial lighting work. Applications can be submitted online through the City's ePlans portal. Standard commercial interior permits take 5–10 business days. Projects in the Downtown District, Downtown Specific Plan area, or the Station District Transit Corridor may require concurrent Planning review, which can add 2–4 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What SCE rebates are available for commercial LED upgrades in Santa Ana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Southern California Edison serves most of Santa Ana. SCE's Business Energy Solutions program offers prescriptive rebates of $30–$60 per fixture for interior LED upgrades (replacing fluorescent) and $75–$100 per fixture for high-bay LED conversions (replacing 400W+ HID). Custom incentives for larger projects pay $0.09–$0.15 per annual kWh saved. Pre-approval is required before installation begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a commercial LED retrofit take in Santa Ana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 20,000 sq ft Santa Ana warehouse retrofit takes 5–8 working days with a 3–4 person C-10 licensed crew. From initial site survey to installation start, allow 4–6 weeks for photometric design, Title 24 CF1R-LTG documentation, SCE rebate pre-approval, and permit processing through the City of Santa Ana."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Commercial LED Retrofit Costs in Santa Ana, CA: Full vs. Partial Replacement | Echelon Lighting"
+  description="LED retrofit costs in Santa Ana run $2–$10/sq ft depending on scope. When Title 24 forces a full replacement vs. a lamp swap — plus SCE rebate rates and permit timeline."
+  schema={faqSchema}
+>
+  <div class="section py-12">
+    <nav class="flex items-center gap-2 text-xs text-gray-400 mb-8">
+      <a href="/" class="hover:text-gray-700 no-underline">Home</a><span>/</span>
+      <a href="/blog/" class="hover:text-gray-700 no-underline">Blog</a><span>/</span>
+      <span class="text-gray-700">LED Retrofit Costs in Santa Ana, CA</span>
+    </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <article class="lg:col-span-2">
+        <div class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">LED Retrofit · Santa Ana, CA · April 2026 · 10 min read</div>
+        <h1 class="text-4xl font-bold tracking-tight mb-4 leading-tight">Commercial LED Retrofit Costs in Santa Ana, CA: Full Replacement vs. Partial Swap</h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">Santa Ana property owners and electrical contractors ask the same question every time a lighting upgrade comes up: do we swap lamps and drivers, or pull and replace the entire fixture? The answer matters because it changes your cost by 40–60%, your Title 24 compliance obligations, and how much of an SCE rebate you can capture. Here's how to make that call correctly.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Santa Ana is one of the densest commercial markets in Orange County — a city of 27 square miles packed with manufacturing facilities along the 405 and 55 corridors, professional office buildings around the Civic Center, retail centers from Bristol Street to Main Place, and a fast-gentrifying downtown with restaurant and hospitality buildouts in the Station District. Each of these building types lands in a different spot on the retrofit decision tree, and California's 2022 Title 24 affects every one of them.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">The Core Decision: Retrofit Scope and Title 24 Thresholds</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">California Title 24 Part 6 triggers a full compliance review when a project alters 10% or more of a space's connected lighting load. This threshold is the first thing to evaluate on any Santa Ana commercial lighting project, because crossing it changes the entire project scope and cost.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Below the 10% threshold (maintenance project):</strong> A lamp-and-driver swap that touches fewer than 10% of fixtures may qualify as a maintenance action. You're not adding connected load, you're not changing control systems, and the City of Santa Ana may process it without requiring a full Title 24 CF1R-LTG Certificate of Compliance. This is the fastest, cheapest path — but it's a narrow path, and crossing that 10% line accidentally creates compliance exposure that's expensive to fix after the fact.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Above the 10% threshold (alteration project):</strong> Once you're doing a real retrofit — replacing 30% of your high-bays, redoing an entire floor of office troffers, or converting a full parking lot — you're in Title 24 alteration territory. That means: (1) meeting current LPD limits by space type, (2) installing occupancy sensors or multi-level switching, (3) implementing daylight-responsive controls in any perimeter zone within 15 feet of exterior glazing, and (4) submitting a CF1R-LTG compliance form signed by a C-10 licensed contractor. The City of Santa Ana requires this documentation for permit issuance, and HERS raters check for it during inspection.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">The practical implication: if you're going to trigger Title 24 compliance anyway, it almost always makes sense to replace fixtures entirely rather than do a partial lamp swap. You get better efficiency, longer life, a cleaner installation, and a higher SCE rebate — often for only 20–30% more in project cost.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Retrofit Cost Breakdown by Facility Type in Santa Ana</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">These ranges reflect 2026 Santa Ana market pricing, including fixtures, labor, controls, and permits. All costs assume a licensed C-10 contractor and full Title 24 compliance.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Warehouse and Industrial (405 / 55 Corridor)</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's industrial base runs along the 405 freeway corridor and south of the 22 through the South Coast Metro area. These facilities — flex-industrial buildings from the 1970s through early 2000s — typically have 20–36 foot clear heights with original 400W or 1,000W metal halide high-bays burning $350–$600 per fixture per year in electricity at SCE's current commercial rates.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Lamp-and-driver swap (below 10% threshold):</strong> $180–$280 per fixture, installed. Replaces the lamp and ballast only; housing and optical assembly stay. Useful for spot failures in an otherwise functional system, but doesn't dramatically reduce energy consumption and doesn't capture SCE prescriptive rebates.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>LED retrofit kit (above threshold, existing housing retained):</strong> $320–$480 per fixture installed. A DLC-listed LED module installs into the existing high-bay housing. Reduces watts from 400W to 150–200W. Qualifies for SCE prescriptive rebates of $75–$100 per fixture. Works well when existing housing is in good condition — typically on buildings constructed after 1990.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Full fixture replacement (new LED high-bay, new housing):</strong> $480–$720 per fixture installed. Complete new UFO or linear LED high-bay — 150W replacing 400W HID, or 240W replacing 1,000W HID. Best optical distribution, longest expected lifespan (100,000+ hours rated), and full SCE rebate eligibility. For a 30,000 sq ft Santa Ana industrial facility with 60 high-bays, total installed cost runs $28,800–$43,200 before a $4,500–$6,000 SCE rebate.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Energy savings on a Santa Ana warehouse running HID: 55–70% reduction in lighting energy consumption. At SCE's current commercial rate of $0.22–$0.30/kWh (depending on time-of-use tier), a 30,000 sq ft facility saves $12,000–$22,000 annually in electricity after an LED conversion. Simple payback before rebates: 2–3.5 years. After rebates: 1.8–3 years.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Office Buildings (Civic Center, South Coast Metro)</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's office market centers on the Civic Center area — City Hall and county government offices anchor a dense cluster of professional services firms, legal offices, and medical practices. South Coast Metro, straddling the Santa Ana/Costa Mesa border, adds Class A and B office towers along MacArthur Boulevard.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>T8 fluorescent troffer retrofit (LED drop-in):</strong> $220–$380 per fixture installed. An LED troffer kit drops into the existing T-bar grid and connects to the existing wiring. Cuts watts from 64W (3-lamp T8) to 36–42W LED. Qualifies for SCE prescriptive rebates of $30–$60 per fixture. The catch: existing T-bar grids in older Santa Ana office buildings often weren't installed to current CBC seismic standards, and a careful contractor will check and brace the grid as part of the job — add $2–$5 per linear foot of grid for seismic compliance work.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Full fixture replacement (new LED troffer or linear suspended):</strong> $380–$650 per fixture installed. For spaces where the existing housing is discolored, damaged, or non-standard, or where the project design calls for a different layout or fixture type, full replacement is the better long-term investment. A 10,000 sq ft Santa Ana office floor with 120 fixtures runs $45,600–$78,000 for a full replacement, compared to $26,400–$45,600 for a drop-in retrofit.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Title 24 note for office retrofits: the 2022 standards require occupancy sensing and multi-level switching in all office spaces, plus daylight harvesting in any zone within 15 feet of exterior windows. In a perimeter office with 4 rows of fixtures, the two rows nearest the window must be separately circuited and controlled by a photosensor. This is mandatory, not optional — and it requires that the electrical circuit layout support it. Plan for this before your contractor starts.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Retail and Commercial Corridors (Bristol, 17th Street, Main Place)</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's retail corridors — Bristol Street, 17th Street, the Grand Avenue district, and the Main Place Mall area — run from neighborhood-serving strip centers to regional retail anchors. Each has a different lighting profile and a different retrofit calculus.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Retrofit vs. replace decision in retail:</strong> In retail, the quality of light matters commercially, not just from an energy perspective. A lamp-and-driver swap that maintains adequate foot-candles but delivers 80 CRI versus the 95 CRI your product deserves is a false economy. For any retail space where merchandise appearance drives customer conversion, we recommend full fixture replacement with high-CRI (90+) LED track or downlights rather than retrofitting fluorescent or lower-quality LED systems.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Retail retrofit pricing:</strong> $3.50–$7 per square foot for a full LED conversion including track lighting, display case lighting, and perimeter accents. A 3,000 sq ft boutique retail space in Santa Ana's downtown runs $10,500–$21,000 installed. Food and beverage spaces requiring warm-dimming LED (2,700K–3,000K, tunable to 1,800K for ambiance) run a 20–30% premium over standard LED.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Downtown Santa Ana's Design Overlay Zone adds a layer of planning review for tenant improvements visible from the street. Exterior signage lighting and storefront illumination must go through the Design Review process — coordinate this early, because it can add 3–6 weeks to your permit timeline.</p>
+
+        <h3 class="text-lg font-bold tracking-tight mb-2">Parking Lots and Exterior</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana's parking infrastructure ranges from surface lots serving the industrial corridors to structured parking in the Civic Center district. Exterior lighting in Southern California must satisfy both Title 24 outdoor requirements and the City's dark-sky ordinance provisions near residential zones.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Pole-mounted area light retrofit (head swap):</strong> $800–$1,800 per fixture installed. If poles are structurally sound and wiring is serviceable, swapping just the luminaire head to LED is the fastest payback option. Replacing a 400W HID area light with a 150W LED cuts electricity cost by $100–$140 per fixture per year at SCE rates. For a 50-space lot with 8 poles, annual savings of $800–$1,120 against an install cost of $6,400–$14,400 yields a 7–14 year payback on this approach — acceptable but not compelling.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Full pole and fixture replacement:</strong> $2,200–$4,800 per pole, installed. Required when existing poles are corroded, bent, or don't meet current CBC seismic requirements for Santa Ana's Seismic Design Category D classification. Full poles include new foundations, new pole, new LED fixture — typically 15–20 year expected life on the complete assembly. Full replacement qualifies for SCE prescriptive rebates of $50–$90 per fixture.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Title 24 outdoor requirements: all parking and exterior lighting must be controlled by photosensors (photocell-based automatic on/off) and must be capable of reducing power by at least 50% during nighttime hours. For LED pole lights, this typically means specifying fixtures with 0–10V dimming drivers and a time-controlled nighttime reduction profile. This is mandated — not just a good practice.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">SCE Rebates for Santa Ana Commercial Properties</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Southern California Edison serves the vast majority of Santa Ana. SCE's Business Energy Solutions program provides two rebate tracks: prescriptive (fixed per-fixture amounts for standard upgrades) and custom (calculated per kWh saved for larger projects).</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Prescriptive rebate rates (2026):</strong> Interior LED troffers replacing fluorescent: $30–$60 per fixture. LED high-bays replacing 400W HID: $75 per fixture. LED high-bays replacing 1,000W HID: $100 per fixture. Exterior LED area lights replacing HID: $50–$90 per fixture. Controls (occupancy sensors, daylighting sensors): $30–$75 per sensor.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Custom rebate rates:</strong> For projects with significant energy savings that don't fit the prescriptive tables — large industrial facilities, complex mixed-use retrofits, or projects involving lighting controls and building automation — SCE calculates incentives at $0.09–$0.15 per annual kWh saved. A Santa Ana warehouse project saving 200,000 kWh/year can earn $18,000–$30,000 in SCE custom incentives.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4"><strong>Critical requirement:</strong> SCE pre-approval must be obtained before installation begins. The pre-approval application includes your existing fixture count and wattages, proposed LED specifications (DLC Premium listing required), and projected energy savings. Submitting after the installation is complete disqualifies you from the rebate — no exceptions.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">Echelon manages the complete SCE rebate process on every Santa Ana project: pre-approval application, DLC verification, post-installation documentation, and rebate check follow-up. This is included in our project fee, not billed separately. For context on a neighboring market, <a href="/commercial-lighting-anaheim/" class="text-blue-700 hover:text-blue-900">our Anaheim page covers both SCE and Anaheim Public Utilities rebate programs</a> in detail.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Santa Ana Permit Process and Timeline</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The City of Santa Ana Building Division processes electrical permits through an online ePlans portal. For a standard interior commercial lighting retrofit — straightforward fixture replacement in a non-historic building without Planning overlay — expect 5–10 business days for permit approval once plans are submitted.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Projects that add complexity to the permit timeline:</p>
+        <ul class="list-disc pl-6 mb-4 text-sm text-gray-600 space-y-1">
+          <li><strong>Downtown Specific Plan area:</strong> Any exterior changes visible from the public right-of-way require Design Review, adding 3–6 weeks.</li>
+          <li><strong>Station District Transit Corridor:</strong> Projects within the 1/2-mile radius of the Santa Ana Regional Transportation Center are subject to Transit Corridor design standards and may require Planning approval.</li>
+          <li><strong>Historic structures:</strong> Buildings listed on the Santa Ana Historic Register require review by the Historic Resources Commission for any exterior changes. Interior work in historic buildings may also face scrutiny if changes affect character-defining features.</li>
+          <li><strong>HERS inspection:</strong> Title 24 compliance for lighting alterations requires a HERS (Home Energy Rating System) third-party inspection in addition to the City building inspection. Coordinate HERS scheduling before pulling fixtures — inspectors have limited availability and a 1–2 week lead time is common in Orange County.</li>
+        </ul>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">All commercial electrical work in Santa Ana must be performed by a contractor holding a California C-10 Electrical Contractor license. Out-of-state licenses are not accepted — this eliminates some national "energy services companies" that can't actually pull permits here. Echelon holds a C-10 license covering all of California.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Seismic Requirements Specific to Santa Ana</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">Santa Ana is classified in Seismic Design Category D under the California Building Code — one of the more demanding seismic categories. This has direct implications for commercial lighting installations.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">For suspended ceiling systems: T-bar grids must be independently braced with seismic wire at 4-foot maximum intervals per CBC Chapter 16. Any fluorescent or LED troffer retrofit work in a dropped ceiling requires verification that the existing grid is properly seismically braced — many grids in Santa Ana's older office and commercial buildings predate current requirements and are inadequate. Bracing existing grids typically adds $2–$5 per square foot of ceiling area, but it's required for permit signoff.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">For pendant-mounted linear fixtures: individual seismic bracing cables are required independent of the mechanical suspension. The fixture manufacturer's seismic brace kit (or field-fabricated equivalent meeting CBC requirements) must be used. This is not an area where field improvisation is acceptable — inspectors check it.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">For exterior pole-mounted fixtures: poles must be engineered and stamped for lateral seismic loads appropriate to SDC D. This is separate from wind load calculations. Budget $800–$1,500 for engineering on a pole replacement project if signed drawings don't come standard with your contractor's proposal.</p>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Making the Full vs. Partial Retrofit Decision</h2>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">The right answer is usually full fixture replacement when:</p>
+        <ul class="list-disc pl-6 mb-4 text-sm text-gray-600 space-y-1">
+          <li>The project triggers Title 24 compliance (crossing the 10% threshold)</li>
+          <li>Existing housings are older than 15–20 years and have degraded optics</li>
+          <li>You want to capture the full SCE prescriptive rebate (some retrofit kits don't qualify)</li>
+          <li>The space will be occupied during construction (new fixtures often install faster than retrofit kits)</li>
+          <li>The project involves a layout change, adding fixtures, or moving circuits</li>
+        </ul>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">A lamp-and-driver swap makes sense when:</p>
+        <ul class="list-disc pl-6 mb-4 text-sm text-gray-600 space-y-1">
+          <li>You have spot failures in an otherwise modern (post-2005) system</li>
+          <li>The project is genuinely below the 10% Title 24 threshold</li>
+          <li>Budget constraints require a phased approach over multiple fiscal years</li>
+          <li>Existing fixtures are high-quality housings worth preserving</li>
+        </ul>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">For most Santa Ana commercial facilities — especially the industrial buildings along the 405 corridor running 25-year-old metal halide systems — full fixture replacement with new LED high-bays is the correct choice. The energy savings are larger, the SCE rebate is higher, the installation is cleaner, and the 10-year warranty on new LED fixtures eliminates the maintenance cost spiral that plagues aging HID systems.</p>
+
+        <p class="text-sm text-gray-600 leading-relaxed mb-6">See our related resources: <a href="/commercial-lighting-anaheim/" class="text-blue-700 hover:text-blue-900">commercial lighting in Anaheim</a> covers the neighboring Orange County market in detail, and our <a href="/blog/commercial-lighting-installation-anaheim-ca/" class="text-blue-700 hover:text-blue-900">Anaheim cost guide</a> breaks down pricing for warehouses, offices, and retail.</p>
+
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-8">
+          <h3 class="text-base font-bold mb-2">Get a Free Retrofit Assessment for Your Santa Ana Property</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">We'll walk your facility, evaluate whether a retrofit or full replacement is the right call, calculate SCE rebate eligibility, and give you an exact installed price. No obligation, no high-pressure follow-up — just numbers you can use to make the right decision for your building.</p>
+          <button onclick="openRFQ('','','Santa Ana CA — LED Retrofit Assessment')" class="bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-600 cursor-pointer border-0">Request a Free Lighting Assessment</button>
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Frequently Asked Questions</h2>
+
+        <div class="mb-4">
+          <h3 class="text-base font-bold mb-1">How much does a commercial LED retrofit cost in Santa Ana, CA?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">A commercial LED retrofit in Santa Ana runs $2–$6 per square foot for a lamp-and-driver swap, or $4–$10 per square foot for full fixture replacement. A 15,000 sq ft warehouse retrofit averages $30,000–$75,000 installed before SCE rebates of $30–$100 per fixture.</p>
+        </div>
+        <div class="mb-4">
+          <h3 class="text-base font-bold mb-1">When does California Title 24 require full fixture replacement?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Title 24 Part 6 triggers a full compliance review when a project alters 10% or more of a space's connected lighting load. Once triggered, you must meet current LPD limits, install occupancy sensors, and add daylight-responsive controls in perimeter zones. This usually makes full fixture replacement the more economical choice over a partial swap.</p>
+        </div>
+        <div class="mb-4">
+          <h3 class="text-base font-bold mb-1">Does Santa Ana require permits for commercial lighting?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Yes. The City of Santa Ana Building Division requires an electrical permit for commercial lighting work. Standard interior permits take 5–10 business days through the ePlans portal. Projects in the Downtown Specific Plan or Station District may require concurrent Planning review, adding 2–4 weeks.</p>
+        </div>
+        <div class="mb-4">
+          <h3 class="text-base font-bold mb-1">What SCE rebates are available for commercial LED upgrades in Santa Ana?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">SCE prescriptive rebates run $30–$60 per fixture for interior LED (replacing fluorescent), $75–$100 per fixture for high-bay LED (replacing HID), and $50–$90 per fixture for exterior LED. Custom incentives for large projects pay $0.09–$0.15 per annual kWh saved. Pre-approval is required before installation.</p>
+        </div>
+        <div class="mb-8">
+          <h3 class="text-base font-bold mb-1">How long does a commercial LED retrofit take in Santa Ana?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">A 20,000 sq ft warehouse retrofit takes 5–8 working days with a 3–4 person crew. From site survey to installation start, allow 4–6 weeks for photometric design, Title 24 documentation, SCE rebate pre-approval, and City permit processing.</p>
+        </div>
+
+      </article>
+      <div>
+        <div class="sticky top-20 flex flex-col gap-5">
+          <div class="bg-blue-700 rounded-xl p-5 text-white">
+            <h3 class="text-sm font-bold mb-2">Santa Ana LED Retrofit</h3>
+            <p class="text-xs text-blue-200 leading-relaxed mb-4">Full or partial — we'll tell you which is right for your building and give you an exact price before you commit.</p>
+            <button onclick="openRFQ('','','Santa Ana CA — Sidebar CTA')" class="w-full bg-white text-blue-700 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-50 cursor-pointer border-0">Get a Free Assessment</button>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="text-sm font-bold mb-3">Related Resources</h3>
+            <div class="flex flex-col gap-2">
+              <a href="/commercial-lighting-santa-ana/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5 border-b border-gray-100">Commercial Lighting Services in Santa Ana →</a>
+              <a href="/commercial-lighting-anaheim/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5 border-b border-gray-100">Commercial Lighting in Anaheim, CA →</a>
+              <a href="/blog/commercial-lighting-installation-anaheim-ca/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5 border-b border-gray-100">Anaheim Commercial Lighting Cost Guide →</a>
+              <a href="/products/high-bay/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5 border-b border-gray-100">Warehouse & High-Bay LED Fixtures →</a>
+              <a href="/compliance/" class="text-xs text-gray-600 hover:text-blue-700 no-underline py-1.5">Title 24 & SCE Rebate Info →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>
